@@ -4,6 +4,11 @@ variable "api_key" {
   sensitive   = true
 }
 
+variable "name" {
+  type        = string
+  description = "Name for the model"
+}
+
 variable "space_id" {
   type        = string
   description = "Space ID for the model"
