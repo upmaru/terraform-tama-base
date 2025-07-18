@@ -1,6 +1,3 @@
-# terraform-tama-base
-Base modules for Tama
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
