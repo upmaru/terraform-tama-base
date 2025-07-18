@@ -26,11 +26,6 @@ variable "requests_per_second" {
 }
 
 variable "models" {
-  type        = list(string)
-  description = "List of identifiers for the model"
-}
-
-variable "models" {
   type = list(object({
     identifier = string
     path       = string
