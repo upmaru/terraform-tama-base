@@ -31,6 +31,7 @@ No modules.
 | <a name="input_api_key"></a> [api\_key](#input\_api\_key) | API key for the model | `string` | n/a | yes |
 | <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | Endpoint for the model | `string` | n/a | yes |
 | <a name="input_models"></a> [models](#input\_models) | List of models with their identifiers and paths | <pre>list(object({<br/>    identifier = string<br/>    path       = string<br/>  }))</pre> | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Name for the model | `string` | n/a | yes |
 | <a name="input_requests_per_second"></a> [requests\_per\_second](#input\_requests\_per\_second) | Requests per second limit | `number` | `10` | no |
 | <a name="input_space_id"></a> [space\_id](#input\_space\_id) | Space ID for the model | `string` | n/a | yes |
 
@@ -39,4 +40,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_model_ids"></a> [model\_ids](#output\_model\_ids) | Map of model identifiers to their IDs |
+| <a name="output_source_id"></a> [source\_id](#output\_source\_id) | ID of the source |
 <!-- END_TF_DOCS -->
