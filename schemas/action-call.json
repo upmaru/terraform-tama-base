@@ -1,0 +1,32 @@
+{
+  "title": "action-call",
+  "description": "An action call is a request to execute an action.",
+  "properties": {
+    "something": {
+      "type": "string",
+      "description": "Something"
+    },
+    "code": {
+      "description": "The status of the action call",
+      "type": "integer"
+    },
+    "tool_id": {
+      "description": "The ID of the tool to execute",
+      "type": "string"
+    },
+    "parameters": {
+      "description": "The parameters to pass to the action",
+      "type": "object"
+    },
+    "content_type": {
+      "description": "The content type of the response",
+      "type": "string"
+    },
+    "content": {
+      "description": "The response from the action",
+      "type": "object"
+    }
+  },
+  "required": ["tool_id", "parameters", "code", "content_type", "content"],
+  "type": "object"
+}

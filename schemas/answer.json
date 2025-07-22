@@ -1,0 +1,12 @@
+{
+  "title": "answer",
+  "description": "A text-based answer for the user query.",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "The main content of the answer"
+    }
+  },
+  "required": ["content"]
+}

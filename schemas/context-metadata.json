@@ -1,0 +1,16 @@
+{
+  "title": "context-metadata",
+  "description": "A context metadata is a metadata about a context.",
+  "type": "object",
+  "properties": {
+    "actor_id": {
+      "type": "integer",
+      "description": "The id of the actor"
+    },
+    "current_timestamp": {
+      "type": "string",
+      "description": "The current timestamp"
+    }
+  },
+  "required": ["actor_id", "current_timestamp"]
+}

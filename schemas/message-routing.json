@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "title": "message-routing",
+  "description": "The result for message routing task.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of the message routing result",
+      "enum": ["classification", "similarity"]
+    },
+    "class": {
+      "type": "string",
+      "description": "The class of the message"
+    },
+    "confidence": {
+      "type": "number",
+      "description": "The confidence in the classification between 0 and 1"
+    },
+    "forwarded_to_entity_id": {
+      "type": "integer",
+      "description": "The id of the entity that the message is forwarded to."
+    },
+    "chunks": {
+      "type": "array",
+      "description": "Array of similar items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The id of the resource"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the resource"
+          },
+          "score": {
+            "type": "number",
+            "description": "The similarity score between 0 and 1"
+          }
+        }
+      }
+    }
+  },
+  "required": ["forwarded_to_entity_id", "type"]
+}
