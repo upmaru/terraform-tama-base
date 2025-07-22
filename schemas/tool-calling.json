@@ -1,0 +1,46 @@
+{
+  "description": "A tool calling is a tool that can be called by a model.",
+  "properties": {
+    "entity_ids": {
+      "description": "An array of entity IDs related to the tool call",
+      "items": { "type": "string" },
+      "type": "array"
+    },
+    "messages": {
+      "description": "An array of messages from the tool call",
+      "items": {
+        "properties": {
+          "code": {
+            "description": "The response code of the tool call",
+            "type": "integer"
+          },
+          "content_type": {
+            "description": "The content type of the tool call",
+            "type": "string"
+          },
+          "content": {
+            "description": "The content of the message",
+            "type": ["string", "null"]
+          },
+          "name": {
+            "description": "The name of the tool",
+            "type": "string"
+          },
+          "role": {
+            "description": "The role of the message",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "description": "The id of the tool call",
+            "type": "string"
+          }
+        },
+        "required": ["role", "tool_call_id", "content"],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "title": "tool-calling",
+  "type": "object"
+}

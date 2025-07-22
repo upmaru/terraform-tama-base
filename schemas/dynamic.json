@@ -1,0 +1,11 @@
+{
+  "title": "dynamic",
+  "description": "A dynamic schema constructed at runtime, used for data transformation.",
+  "properties": {
+    "entity": {
+      "description": "The record of the entity",
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

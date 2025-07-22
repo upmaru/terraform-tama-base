@@ -1,0 +1,25 @@
+{
+  "title": "collection",
+  "description": "A collection is a group of entities that can be queried.",
+  "properties": {
+    "space": {
+      "type": "string",
+      "description": "Slug of the space"
+    },
+    "name": {
+      "description": "The name of the collection",
+      "type": "string"
+    },
+    "created_at": {
+      "description": "The unix timestamp when the collection was created",
+      "type": "integer"
+    },
+    "items": {
+      "description": "An array of objects",
+      "items": { "type": "object" },
+      "type": "array"
+    }
+  },
+  "required": ["items", "space", "name", "created_at"],
+  "type": "object"
+}

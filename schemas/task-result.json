@@ -1,0 +1,13 @@
+{
+  "title": "task-result",
+  "description": "The result of the task thought.",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string",
+      "description": "The result of the task",
+      "enum": ["success", "failed", "skipped"]
+    }
+  },
+  "required": ["result"]
+}
