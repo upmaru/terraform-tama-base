@@ -35,3 +35,13 @@ module "xai" {
     }
   ]
 }
+
+resource "tama_space_processor" "completion" {
+  space_id = data.tama_space.global.id
+  model_id = module.xai.model_ids["grok-3-mini"]
+
+  completion_config {
+    temperature = 0.5
+    tool_choice = "required"
+  }
+}
