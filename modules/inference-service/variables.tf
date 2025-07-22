@@ -29,7 +29,8 @@ variable "models" {
   type = list(object({
     identifier = string
     path       = string
-    parameters = optional(any, {})
+    parameters = optional(object({}), {})
   }))
+
   description = "List of models with their identifiers and paths"
 }
