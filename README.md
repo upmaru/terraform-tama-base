@@ -23,11 +23,13 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [tama_chain.identity-validation](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/chain) | resource |
 | [tama_class.action](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.class-proxy](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.entity-network](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.forwarding](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.schemas](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
+| [tama_thought.validate](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/thought) | resource |
 | [tama_space.global](https://registry.terraform.io/providers/upmaru/tama/latest/docs/data-sources/space) | data source |
 
 ## Inputs
