@@ -131,3 +131,18 @@ resource "tama_class" "action" {
     })
   }
 }
+
+resource "tama_chain" "identity-validation" {
+  space_id = data.tama_space.global.id
+  name     = "Identity Validation"
+}
+
+resource "tama_thought" "validate" {
+  chain_id        = tama_chain.identity-validation.id
+  relation        = "validation"
+  output_class_id = tama_class.schemas["task-result"].id
+
+  module {
+    reference = "tama/identities/validate"
+  }
+}
