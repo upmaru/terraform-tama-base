@@ -1,4 +1,10 @@
+output "space" {
+  description = "The Global Space"
+  value       = tama_space.this
+}
+
 output "schemas" {
+  description = "Schemas for the Global Space"
   value = merge(
     tama_class.schemas,
     {

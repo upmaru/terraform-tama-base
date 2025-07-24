@@ -5,12 +5,13 @@ locals {
   }
 }
 
-data "tama_space" "global" {
-  id = "global"
+resource "tama_space" "this" {
+  name = "global"
+  type = "global"
 }
 
 resource "tama_class" "class-proxy" {
-  space_id = data.tama_space.global.id
+  space_id = tama_space.this.id
 
   schema {
     title       = "class-proxy"
@@ -31,14 +32,14 @@ resource "tama_class" "class-proxy" {
 resource "tama_class" "schemas" {
   for_each = local.schema_files
 
-  space_id    = data.tama_space.global.id
+  space_id    = tama_space.this.id
   schema_json = jsonencode(jsondecode(file("${path.module}/schemas/${each.value}")))
 
   depends_on = [tama_class.class-proxy]
 }
 
 resource "tama_class" "forwarding" {
-  space_id   = data.tama_space.global.id
+  space_id   = tama_space.this.id
   depends_on = [tama_class.class-proxy]
 
   schema {
@@ -60,7 +61,7 @@ resource "tama_class" "forwarding" {
 }
 
 resource "tama_class" "entity-network" {
-  space_id   = data.tama_space.global.id
+  space_id   = tama_space.this.id
   depends_on = [tama_class.class-proxy]
 
   schema {
@@ -101,7 +102,7 @@ resource "tama_class" "entity-network" {
 }
 
 resource "tama_class" "action" {
-  space_id   = data.tama_space.global.id
+  space_id   = tama_space.this.id
   depends_on = [tama_class.class-proxy]
 
   schema {
@@ -133,7 +134,7 @@ resource "tama_class" "action" {
 }
 
 resource "tama_chain" "identity-validation" {
-  space_id = data.tama_space.global.id
+  space_id = tama_space.this.id
   name     = "Identity Validation"
 }
 
