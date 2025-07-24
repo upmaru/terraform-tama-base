@@ -29,8 +29,8 @@ No modules.
 | [tama_class.entity-network](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.forwarding](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.schemas](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
+| [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
 | [tama_thought.validate](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/thought) | resource |
-| [tama_space.global](https://registry.terraform.io/providers/upmaru/tama/latest/docs/data-sources/space) | data source |
 
 ## Inputs
 
@@ -40,5 +40,6 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_schemas"></a> [schemas](#output\_schemas) | n/a |
+| <a name="output_schemas"></a> [schemas](#output\_schemas) | Schemas for the Global Space |
+| <a name="output_space"></a> [space](#output\_space) | The Global Space |
 <!-- END_TF_DOCS -->
