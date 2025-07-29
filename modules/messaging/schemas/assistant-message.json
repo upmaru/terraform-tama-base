@@ -1,0 +1,77 @@
+{
+  "description": "A message from the assistant",
+  "metadata": {
+    "role": "assistant"
+  },
+  "properties": {
+    "actor_id": {
+      "description": "Foreign key reference for the actor entity.",
+      "type": "string"
+    },
+    "content": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "The main content of the message."
+    },
+    "index": {
+      "description": "Index of the message in a given thread.",
+      "type": "integer"
+    },
+    "thread_id": {
+      "description": "Reference to the thread.",
+      "type": "string"
+    },
+    "tool_calls": {
+      "description": "An array of tool calls",
+      "items": {
+        "properties": {
+          "function": {
+            "properties": {
+              "arguments": {
+                "description": "Arguments passed to the function.",
+                "type": "string"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Description of the function."
+              },
+              "name": {
+                "description": "Name of the function.",
+                "type": "string"
+              }
+            },
+            "required": ["arguments", "name"],
+            "type": "object"
+          },
+          "id": {
+            "description": "ID of the tool call.",
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of tool call (e.g., function).",
+            "type": "string"
+          }
+        },
+        "required": ["function", "id", "type"],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": ["content", "index", "actor_id", "thread_id"],
+  "title": "assistant-message",
+  "type": "object"
+}
