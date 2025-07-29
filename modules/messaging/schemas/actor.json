@@ -1,0 +1,12 @@
+{
+  "description": "Actors in a given system",
+  "properties": {
+    "id": {
+      "description": "Unique identifier of the actor.",
+      "type": "string"
+    }
+  },
+  "required": ["id"],
+  "title": "actor",
+  "type": "object"
+}

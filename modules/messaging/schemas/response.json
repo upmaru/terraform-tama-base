@@ -1,0 +1,16 @@
+{
+  "description": "Final class to hold entities for final response.",
+  "properties": {
+    "forwarded_from_concept_id": {
+      "description": "The concept id that forwarded this message.",
+      "type": "string"
+    },
+    "origin_entity_id": {
+      "description": "The origin entity with the original message",
+      "type": "string"
+    }
+  },
+  "required": ["origin_entity_id", "forwarded_from_concept_id"],
+  "title": "response",
+  "type": "object"
+}

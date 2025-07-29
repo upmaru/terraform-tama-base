@@ -1,0 +1,27 @@
+{
+  "description": "A message from the user",
+  "metadata": {
+    "role": "user"
+  },
+  "properties": {
+    "actor_id": {
+      "description": "Foreign key reference for the actor entity.",
+      "type": "string"
+    },
+    "content": {
+      "description": "The main content of the message.",
+      "type": "string"
+    },
+    "index": {
+      "description": "Index of the message in a given thread.",
+      "type": "integer"
+    },
+    "thread_id": {
+      "description": "Reference to the thread.",
+      "type": "string"
+    }
+  },
+  "required": ["content", "index", "actor_id", "thread_id"],
+  "title": "user-message",
+  "type": "object"
+}

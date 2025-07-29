@@ -1,0 +1,17 @@
+{
+  "description": "A thread of messages.",
+  "properties": {
+    "id": {
+      "description": "Unique identifier of the thread.",
+      "type": "string"
+    },
+    "subject": {
+      "default": "Untitled",
+      "description": "The subject of the thread.",
+      "type": "string"
+    }
+  },
+  "required": ["id"],
+  "title": "thread",
+  "type": "object"
+}
