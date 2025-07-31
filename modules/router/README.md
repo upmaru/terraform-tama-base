@@ -49,5 +49,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_chain_id"></a> [chain\_id](#output\_chain\_id) | The ID of the router chain |
 | <a name="output_routing_thought_id"></a> [routing\_thought\_id](#output\_routing\_thought\_id) | The routing thought |
 <!-- END_TF_DOCS -->
