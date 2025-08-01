@@ -8,8 +8,8 @@ module "global" {
 }
 
 module "memovee" {
-  source = "../../modules/messaging"
+  source     = "../../modules/messaging"
+  depends_on = [module.global.schemas]
 
-  name                 = "memovee"
-  class_proxy_class_id = module.global.schemas["class-proxy"].id
+  name = "memovee"
 }
