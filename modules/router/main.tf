@@ -62,3 +62,16 @@ resource "tama_thought_context" "routing-context" {
   layer      = 0
   prompt_id  = tama_prompt.this.id
 }
+
+resource "tama_chain" "network-message" {
+  space_id = var.root_messaging_space_id
+  name     = "Network Message"
+}
+
+resource "tama_delegated_thought" "network-message" {
+  chain_id = tama_chain.network-message.id
+
+  delegation {
+    target_thought_id = tama_modular_thought.network.id
+  }
+}
