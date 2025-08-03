@@ -18,12 +18,12 @@ resource "tama_modular_thought" "network" {
 }
 
 resource "tama_thought_path" "network-thread" {
-  thought_id      = tama_thought.network.id
+  thought_id      = tama_modular_thought.network.id
   target_class_id = var.thread_class_id
 }
 
 resource "tama_thought_path" "network-actor" {
-  thought_id      = tama_thought.network.id
+  thought_id      = tama_modular_thought.network.id
   target_class_id = var.actor_class_id
 }
 
@@ -58,7 +58,7 @@ resource "tama_prompt" "this" {
 }
 
 resource "tama_thought_context" "routing-context" {
-  thought_id = tama_thought.routing.id
+  thought_id = tama_modular_thought.routing.id
   layer      = 0
   prompt_id  = tama_prompt.this.id
 }

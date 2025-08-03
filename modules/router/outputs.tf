@@ -4,6 +4,6 @@ output "chain_id" {
 }
 
 output "routing_thought_id" {
-  value       = tama_thought.routing.id
+  value       = tama_modular_thought.routing.id
   description = "The routing thought"
 }
