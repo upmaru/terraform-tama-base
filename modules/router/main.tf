@@ -49,10 +49,10 @@ resource "tama_thought_context" "routing-context" {
 }
 
 resource "tama_node" "network" {
-  for_each = var.routable_class_ids
+  count = length(var.routable_class_ids)
 
   space_id = var.root_messaging_space_id
-  class_id = each.value
+  class_id = var.routable_class_ids[count.index]
   chain_id = tama_chain.this.id
 
   type = "reactive"
