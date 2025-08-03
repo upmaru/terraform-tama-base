@@ -29,8 +29,8 @@ No modules.
 | [tama_class.entity-network](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.forwarding](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.schemas](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
+| [tama_modular_thought.validate](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/modular_thought) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
-| [tama_thought.validate](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/thought) | resource |
 
 ## Inputs
 
