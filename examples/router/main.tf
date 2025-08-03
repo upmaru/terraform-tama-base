@@ -11,17 +11,16 @@ module "memovee" {
   source     = "../../modules/messaging"
   depends_on = [module.global.schemas]
 
-  name = "memovee"
+  name                    = "memovee"
+  entity_network_class_id = module.global.schemas["entity-network"].id
 }
 
 module "router" {
   source = "../../modules/router"
 
-  root_messaging_space_id = module.memovee.space.id
-  thread_class_id         = module.memovee.schemas["thread"].id
-  actor_class_id          = module.memovee.schemas["actor"].id
+  root_messaging_space_id    = module.memovee.space.id
+  network_message_thought_id = module.memovee.network_message_thought_id
 
-  entity_network_class_id  = module.global.schemas["entity-network"].id
   message_routing_class_id = module.global.schemas["message-routing"].id
 
   prompt = file("${path.module}/prompt.md")

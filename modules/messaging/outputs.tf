@@ -3,6 +3,11 @@ output "space" {
   description = "The messaging space id"
 }
 
+output "network_message_thought_id" {
+  value       = tama_modular_thought.network.id
+  description = "The id of the network message thought"
+}
+
 output "schemas" {
   description = "Scheams for the messaging space"
   value = {
