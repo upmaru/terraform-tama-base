@@ -3,7 +3,7 @@ resource "tama_chain" "this" {
   name     = "Message Routing"
 }
 
-resource "tama_thought" "network" {
+resource "tama_modular_thought" "network" {
   chain_id        = tama_chain.this.id
   index           = 0
   relation        = "network"
@@ -27,7 +27,7 @@ resource "tama_thought_path" "network-actor" {
   target_class_id = var.actor_class_id
 }
 
-resource "tama_thought" "routing" {
+resource "tama_modular_thought" "routing" {
   chain_id        = tama_chain.this.id
   index           = 1
   relation        = "routing"
