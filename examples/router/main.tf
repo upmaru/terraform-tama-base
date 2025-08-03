@@ -23,5 +23,9 @@ module "router" {
 
   message_routing_class_id = module.global.schemas["message-routing"].id
 
+  routable_class_ids = [
+    module.memovee.schemas["user-message"].id
+  ]
+
   prompt = file("${path.module}/prompt.md")
 }
