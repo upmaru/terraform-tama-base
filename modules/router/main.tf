@@ -3,28 +3,13 @@ resource "tama_chain" "this" {
   name     = "Message Routing"
 }
 
-resource "tama_modular_thought" "network" {
-  chain_id        = tama_chain.this.id
-  index           = 0
-  relation        = "network"
-  output_class_id = var.entity_network_class_id
+resource "tama_delegated_thought" "network" {
+  chain_id = tama_chain.this.id
+  index    = 0
 
-  module {
-    reference = "tama/entities/network"
-    parameters = jsonencode({
-      on = var.foreign_keys
-    })
+  delegation {
+    target_thought_id = var.network_message_thought_id
   }
-}
-
-resource "tama_thought_path" "network-thread" {
-  thought_id      = tama_modular_thought.network.id
-  target_class_id = var.thread_class_id
-}
-
-resource "tama_thought_path" "network-actor" {
-  thought_id      = tama_modular_thought.network.id
-  target_class_id = var.actor_class_id
 }
 
 resource "tama_modular_thought" "routing" {
@@ -61,4 +46,14 @@ resource "tama_thought_context" "routing-context" {
   thought_id = tama_modular_thought.routing.id
   layer      = 0
   prompt_id  = tama_prompt.this.id
+}
+
+resource "tama_node" "network" {
+  for_each = var.routable_class_ids
+
+  space_id = var.root_messaging_space_id
+  class_id = each.value
+  chain_id = tama_chain.this.id
+
+  type = "reactive"
 }

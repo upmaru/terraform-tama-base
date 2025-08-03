@@ -3,24 +3,8 @@ variable "root_messaging_space_id" {
   type        = string
 }
 
-variable "foreign_keys" {
-  description = "The id of the foreign keys"
-  type        = list(string)
-  default     = ["thread_id", "actor_id"]
-}
-
-variable "thread_class_id" {
-  description = "The id of the thread class"
-  type        = string
-}
-
-variable "actor_class_id" {
-  description = "The id of the actor class"
-  type        = string
-}
-
-variable "entity_network_class_id" {
-  description = "The id of the entity network class"
+variable "network_message_thought_id" {
+  description = "The id of the network message thought"
   type        = string
 }
 
@@ -62,4 +46,9 @@ variable "classification_properties" {
   description = "The properties of the classification class"
   type        = list(string)
   default     = ["class", "confidence"]
+}
+
+variable "routable_class_ids" {
+  description = "The ids of the classes to network"
+  type        = list(string)
 }
