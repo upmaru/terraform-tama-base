@@ -33,7 +33,6 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_class_proxy_class_id"></a> [class\_proxy\_class\_id](#input\_class\_proxy\_class\_id) | The ID of the class proxy class | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the corpus | `string` | n/a | yes |
 
 ## Outputs
