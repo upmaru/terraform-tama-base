@@ -138,7 +138,7 @@ resource "tama_chain" "identity-validation" {
   name     = "Identity Validation"
 }
 
-resource "tama_thought" "validate" {
+resource "tama_modular_thought" "validate" {
   chain_id        = tama_chain.identity-validation.id
   relation        = "validation"
   output_class_id = tama_class.schemas["task-result"].id
