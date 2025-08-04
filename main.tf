@@ -38,6 +38,14 @@ resource "tama_class" "schemas" {
   depends_on = [tama_class.class-proxy]
 }
 
+resource "tama_class_corpus" "answer-corpus" {
+  class_id = tama_class.schemas["answer"].id
+
+  main     = true
+  name     = "Answer Content"
+  template = "{{ data.content }}"
+}
+
 resource "tama_class" "forwarding" {
   space_id   = tama_space.this.id
   depends_on = [tama_class.class-proxy]

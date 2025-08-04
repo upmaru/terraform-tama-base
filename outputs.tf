@@ -15,3 +15,8 @@ output "schemas" {
     }
   )
 }
+
+output "answer_corpus_id" {
+  description = "ID of the Answer Corpus"
+  value       = tama_class_corpus.answer-corpus.id
+}
