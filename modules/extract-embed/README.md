@@ -31,7 +31,6 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_answer_class_corpus_id"></a> [answer\_class\_corpus\_id](#input\_answer\_class\_corpus\_id) | The answer class corpus id | `string` | n/a | yes |
-| <a name="input_answer_class_id"></a> [answer\_class\_id](#input\_answer\_class\_id) | The answer class ID | `string` | n/a | yes |
 | <a name="input_embeddable_class_ids"></a> [embeddable\_class\_ids](#input\_embeddable\_class\_ids) | The embeddable class IDs | `list(string)` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name of the Chain | `string` | n/a | yes |
 | <a name="input_relation"></a> [relation](#input\_relation) | The relation | `string` | `"content"` | no |

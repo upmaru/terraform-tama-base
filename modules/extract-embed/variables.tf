@@ -8,11 +8,6 @@ variable "name" {
   type        = string
 }
 
-variable "answer_class_id" {
-  description = "The answer class ID"
-  type        = string
-}
-
 variable "answer_class_corpus_id" {
   description = "The answer class corpus id"
   type        = string
