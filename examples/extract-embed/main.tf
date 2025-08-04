@@ -21,14 +21,12 @@ resource "tama_class" "greeting" {
 module "extract-embed" {
   source = "../../modules/extract-embed"
 
-  space_id = tama_space.basic-conversation.id
+  depends_on = [module.global.schemas]
 
-  name = "Extract and Embed"
-
-  answer_class_id        = module.global.schemas["answer"].id
+  space_id               = tama_space.basic-conversation.id
+  name                   = "Extract and Embed Message"
+  relation               = "content"
   answer_class_corpus_id = module.global.answer_corpus_id
-
-  relation = "content"
 
   embeddable_class_ids = [
     tama_class.greeting.id

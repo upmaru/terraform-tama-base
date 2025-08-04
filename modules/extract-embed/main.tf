@@ -7,9 +7,8 @@ resource "tama_chain" "this" {
 resource "tama_modular_thought" "extract" {
   chain_id = tama_chain.this.id
 
-  index           = 0
-  relation        = "extraction"
-  output_class_id = var.answer_class_id
+  index    = 0
+  relation = "extraction"
 
   module {
     reference = "tama/entities/extraction"
@@ -22,9 +21,8 @@ resource "tama_modular_thought" "extract" {
 resource "tama_modular_thought" "embed" {
   chain_id = tama_chain.this.id
 
-  index           = 1
-  relation        = "embedding"
-  output_class_id = var.answer_class_id
+  index    = 1
+  relation = "embedding"
 
   module {
     reference = "tama/concepts/embed"
