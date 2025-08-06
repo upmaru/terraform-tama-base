@@ -46,6 +46,17 @@ resource "tama_class_corpus" "answer-corpus" {
   template = "{{ data.content }}"
 }
 
+resource "tama_class_corpus" "context-metadata-corpus" {
+  class_id = tama_class.schemas["context-metadata"].id
+
+  main     = true
+  name     = "Context Metadata"
+  template = <<-EOT
+  ACTOR ID: {{ data.actor_id }}
+  CURRENT DATE AND TIME: {{ data.current_timestamp }}
+  EOT
+}
+
 resource "tama_class" "forwarding" {
   space_id   = tama_space.this.id
   depends_on = [tama_class.class-proxy]
