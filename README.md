@@ -30,6 +30,7 @@ No modules.
 | [tama_class.forwarding](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.schemas](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class_corpus.answer-corpus](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
+| [tama_class_corpus.context-metadata-corpus](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_modular_thought.validate](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/modular_thought) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
 
@@ -42,6 +43,7 @@ No inputs.
 | Name | Description |
 |------|-------------|
 | <a name="output_answer_corpus_id"></a> [answer\_corpus\_id](#output\_answer\_corpus\_id) | ID of the Answer Corpus |
+| <a name="output_context_metadata_corpus_id"></a> [context\_metadata\_corpus\_id](#output\_context\_metadata\_corpus\_id) | ID of the Context Metadata Corpus |
 | <a name="output_schemas"></a> [schemas](#output\_schemas) | Schemas for the Global Space |
 | <a name="output_space"></a> [space](#output\_space) | The Global Space |
 <!-- END_TF_DOCS -->
