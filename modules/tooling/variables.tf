@@ -30,9 +30,9 @@ variable "contexts" {
   type = map(object({
     prompt_id = string
     layer     = optional(number)
-    inputs = list(object({
+    inputs = optional(list(object({
       type            = string
       class_corpus_id = string
-    }))
+    })), [])
   }))
 }
