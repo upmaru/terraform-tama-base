@@ -16,3 +16,10 @@ resource "tama_thought_tool" "this" {
   thought_id = tama_modular_thought.this.id
   action_id  = var.action_ids[count.index]
 }
+
+module "tooling-context" {
+  source = "../thought-context"
+
+  thought_id = tama_modular_thought.this.id
+  contexts   = var.contexts
+}

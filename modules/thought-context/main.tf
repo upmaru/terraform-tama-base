@@ -26,7 +26,7 @@ locals {
 resource "tama_thought_context" "this" {
   for_each = var.contexts
 
-  thought_id = tama_modular_thought.this.id
+  thought_id = var.thought_id
   prompt_id  = each.value.prompt_id
   layer      = each.value.layer
 }
