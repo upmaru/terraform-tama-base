@@ -14,15 +14,15 @@
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_tooling-context"></a> [tooling-context](#module\_tooling-context) | ../thought-context | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [tama_modular_thought.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/modular_thought) | resource |
-| [tama_thought_context.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/thought_context) | resource |
-| [tama_thought_context_input.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/thought_context_input) | resource |
 | [tama_thought_tool.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/thought_tool) | resource |
 
 ## Inputs
