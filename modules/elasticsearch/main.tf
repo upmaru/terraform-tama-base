@@ -3,12 +3,12 @@ resource "tama_space" "this" {
   type = "component"
 }
 
-resource "tama_specification" "this" {
+resource "tama_specification" "manage" {
   space_id = tama_space.this.id
   endpoint = var.endpoint
   version  = var.schema_version
 
-  schema = jsonencode(jsondecode(templatefile("${path.module}/schema.tmpl", {
+  schema = jsonencode(yamldecode(templatefile("${path.module}/manage.yaml", {
     endpoint = var.endpoint
   })))
 
@@ -20,8 +20,8 @@ resource "tama_specification" "this" {
   }
 }
 
-resource "tama_source_identity" "this" {
-  specification_id = tama_specification.this.id
+resource "tama_source_identity" "manage" {
+  specification_id = tama_specification.manage.id
   identifier       = var.identity_identifier
 
   api_key = var.api_key

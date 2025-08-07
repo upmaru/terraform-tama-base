@@ -1,0 +1,193 @@
+---
+components:
+  schemas:
+    query-and-sort-based-search:
+      description:
+        Executes a structured Elasticsearch query with sorting and filtering
+        capabilities. Use this schema for precise searches, such as matching specific
+        IDs, date ranges, keywords, or combining conditions, with customizable sorting
+        and field selection.
+      properties:
+        _source:
+          description:
+            An array of field names (strings) to include in the response.
+            Required to optimize response size.
+          items:
+            type: string
+          type: array
+        limit:
+          description: Limit how many results to return. Optional. Defaults to 3.
+          type: integer
+        query:
+          description:
+            An object defining the search criteria (e.g., `terms`, `range`,
+            `match`, or `bool` queries). Required.
+          type: object
+        sort:
+          description:
+            An array of objects specifying fields to sort by and their
+            order. Optional.
+          items:
+            type: object
+          type: array
+      required:
+        - query
+        - _source
+      title: query-and-sort-based-search
+      type: object
+    search-response:
+      description:
+        Represents the response from an Elasticsearch search query, containing
+        metadata and search results.
+      properties:
+        _shards:
+          description:
+            Object with shard statistics (`total`, `successful`, `skipped`,
+            `failed`) for query execution.
+          properties:
+            failed:
+              type: integer
+            skipped:
+              type: integer
+            successful:
+              type: integer
+            total:
+              type: integer
+          required:
+            - total
+            - successful
+            - skipped
+            - failed
+          type: object
+        hits:
+          properties:
+            hits:
+              description:
+                Array of matching documents, each with `_index` (index
+                name), `_id` (document ID), `_score` (relevance score), and `_source`
+                (selected fields).
+              items:
+                properties:
+                  _id:
+                    type: string
+                  _index:
+                    type: string
+                  _score:
+                    type: number
+                  _source:
+                    type: object
+                type: object
+              type: array
+            max_score:
+              description:
+                Number representing the highest relevance score of the
+                results.
+              type: number
+            total:
+              description:
+                Object with `value` (number of matching documents) and
+                `relation` (e.g., 'eq' for exact count).
+              properties:
+                relation:
+                  type: string
+                value:
+                  type: integer
+              required:
+                - value
+                - relation
+              type: object
+          type: object
+        timed_out:
+          description: Boolean indicating if the search timed out (true/false).
+          type: boolean
+        took:
+          description:
+            Integer indicating the time (in milliseconds) the search took
+            to execute.
+          type: integer
+      required:
+        - took
+        - timed_out
+        - _shards
+        - hits
+      title: search-response
+      type: object
+    text-based-vector-search:
+      description:
+        "Performs a semantic vector search on an Elasticsearch index using
+        a text-based query. This schema is ideal for queries where understanding the
+        contextual meaning of the text is critical, such as natural language searches.
+        The search leverages vector embeddings and semantic reranking to prioritize
+        results based on meaning rather than exact keyword matches.
+
+        "
+      properties:
+        _source:
+          description:
+            An array of field names (strings) to include in the response.
+            Required to limit returned fields for efficiency.
+          items:
+            type: string
+          type: array
+        limit:
+          description: Limit how many results to return. Optional. Defaults to 3.
+          type: integer
+        query:
+          description: A string containing the search text. Required.
+          type: string
+      required:
+        - query
+        - _source
+      title: text-based-vector-search
+      type: object
+  securitySchemes:
+    ApiKey:
+      in: header
+      name: Authorization
+      scheme: ApiKey
+      type: apiKey
+info:
+  description: API for searching documents in Elasticsearch. Connects to ${endpoint}
+  title: Elasticsearch Search API
+  version: 1.0.0
+openapi: 3.1.0
+paths:
+  "/{index}/_search":
+    post:
+      description:
+        Searches documents in the specified Elasticsearch index using a
+        query body.
+      operationId: search-index
+      parameters:
+        - description:
+            The name of the index to search. This becomes part of the URL
+            path (e.g., /my_index).
+          in: path
+          name: index
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - "$ref": "#/components/schemas/text-based-vector-search"
+                - "$ref": "#/components/schemas/query-and-sort-based-search"
+        description:
+          The search query to be executed. Supports both text-based vector
+          search and search with sorting.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/search-response"
+          description: Search results from Elasticsearch.
+      summary: Search documents in an index
+security:
+  - ApiKey: []
+servers:
+  - description: Elasticsearch Server
+    url: "${endpoint}"
