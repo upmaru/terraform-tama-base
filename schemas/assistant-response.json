@@ -1,13 +1,13 @@
 {
-  "description": "A tool calling is a tool that can be called by a model.",
+  "description": "Response from the assistant.",
   "properties": {
     "entity_ids": {
-      "description": "An array of entity IDs related to the tool call",
+      "description": "An array of entity IDs related to the response",
       "items": { "type": "string" },
       "type": "array"
     },
     "messages": {
-      "description": "An array of messages from the tool call",
+      "description": "An array of messages from the response",
       "items": {
         "properties": {
           "code": {
@@ -41,6 +41,6 @@
       "type": "array"
     }
   },
-  "title": "tool-calling",
+  "title": "assistant-response",
   "type": "object"
 }

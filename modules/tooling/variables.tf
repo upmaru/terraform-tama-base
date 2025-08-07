@@ -1,5 +1,5 @@
-variable "tool_calling_class_id" {
-  description = "The ID of the tool-calling class"
+variable "assistant_response_class_id" {
+  description = "The ID of the assistant-response class"
   type        = string
 }
 
