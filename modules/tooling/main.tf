@@ -3,7 +3,7 @@ resource "tama_modular_thought" "this" {
   relation = var.relation
   index    = var.index
 
-  output_class_id = var.tool_calling_class_id
+  output_class_id = var.assistant_response_class_id
 
   module {
     reference = "tama/agentic/tooling"

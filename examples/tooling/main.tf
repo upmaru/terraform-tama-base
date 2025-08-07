@@ -48,10 +48,10 @@ resource "tama_chain" "load-profile-and-greet" {
 module "load-profile-tooling" {
   source = "../../modules/tooling"
 
-  chain_id              = tama_chain.load-profile-and-greet.id
-  tool_calling_class_id = module.global.schemas["tool-calling"].id
-  index                 = 0
-  relation              = "tooling"
+  chain_id                    = tama_chain.load-profile-and-greet.id
+  assistant_response_class_id = module.global.schemas["assistant-response"].id
+  index                       = 0
+  relation                    = "tooling"
 
   action_ids = [
     data.tama_action.get-profile.id
