@@ -20,9 +20,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [tama_source_identity.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_identity) | resource |
+| [tama_source_identity.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_identity) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
-| [tama_specification.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/specification) | resource |
+| [tama_specification.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/specification) | resource |
 
 ## Inputs
 
@@ -33,9 +33,11 @@ No modules.
 | <a name="input_identity_identifier"></a> [identity\_identifier](#input\_identity\_identifier) | The identifier for the identity | `string` | `"ApiKey"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Elasticsearch space | `string` | `"elasticsearch"` | no |
 | <a name="input_schema_version"></a> [schema\_version](#input\_schema\_version) | Schema version for the model | `string` | n/a | yes |
-| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br>    path   = string,<br>    method = string,<br>    codes  = list(number)<br>  })</pre> | <pre>{<br>  "codes": [<br>    200<br>  ],<br>  "method": "GET",<br>  "path": "/_cluster/health"<br>}</pre> | no |
+| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br/>    path   = string,<br/>    method = string,<br/>    codes  = list(number)<br/>  })</pre> | <pre>{<br/>  "codes": [<br/>    200<br/>  ],<br/>  "method": "GET",<br/>  "path": "/_cluster/health"<br/>}</pre> | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | n/a |
 <!-- END_TF_DOCS -->
