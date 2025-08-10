@@ -32,7 +32,7 @@
 | <a name="input_action_ids"></a> [action\_ids](#input\_action\_ids) | The IDs of the actions | `list(string)` | n/a | yes |
 | <a name="input_assistant_response_class_id"></a> [assistant\_response\_class\_id](#input\_assistant\_response\_class\_id) | The ID of the assistant-response class | `string` | n/a | yes |
 | <a name="input_chain_id"></a> [chain\_id](#input\_chain\_id) | The ID of the chain | `string` | n/a | yes |
-| <a name="input_contexts"></a> [contexts](#input\_contexts) | The contexts of the tool-calling class | <pre>map(object({<br>    prompt_id = string<br>    layer     = optional(number)<br>    inputs = optional(list(object({<br>      type            = string<br>      class_corpus_id = string<br>    })), [])<br>  }))</pre> | n/a | yes |
+| <a name="input_contexts"></a> [contexts](#input\_contexts) | The contexts of the tool-calling class | <pre>map(object({<br/>    prompt_id = string<br/>    layer     = optional(number)<br/>    inputs = optional(list(object({<br/>      type            = string<br/>      class_corpus_id = string<br/>    })), [])<br/>  }))</pre> | n/a | yes |
 | <a name="input_index"></a> [index](#input\_index) | The index of the tool-calling class | `number` | `0` | no |
 | <a name="input_relation"></a> [relation](#input\_relation) | The relation of the tool-calling class | `string` | `"tooling"` | no |
 
