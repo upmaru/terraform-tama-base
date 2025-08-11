@@ -25,3 +25,8 @@ output "context_metadata_corpus_id" {
   description = "ID of the Context Metadata Corpus"
   value       = tama_class_corpus.context-metadata-corpus.id
 }
+
+output "action_call_json_corpus_id" {
+  description = "ID of the Action Call JSON Corpus"
+  value       = tama_class_corpus.action-call-json-corpus.id
+}
