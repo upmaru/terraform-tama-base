@@ -20,9 +20,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [tama_limit.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/limit) | resource |
 | [tama_model.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/model) | resource |
 | [tama_source.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source) | resource |
+| [tama_source_limit.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_limit) | resource |
 
 ## Inputs
 

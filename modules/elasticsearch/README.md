@@ -20,9 +20,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [tama_source_identity.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_identity) | resource |
+| [tama_source_identity.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_identity) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
-| [tama_specification.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/specification) | resource |
+| [tama_specification.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/specification) | resource |
 
 ## Inputs
 
@@ -37,5 +37,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | n/a |
 <!-- END_TF_DOCS -->

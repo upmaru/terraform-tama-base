@@ -10,7 +10,7 @@ resource "tama_source" "this" {
   type     = "model"
 }
 
-resource "tama_limit" "this" {
+resource "tama_source_limit" "this" {
   source_id   = tama_source.this.id
   scale_count = 1
   scale_unit  = "seconds"
