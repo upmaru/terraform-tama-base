@@ -3,11 +3,6 @@ variable "class_names" {
   type        = list(string)
 }
 
-variable "class_proxy_class_id" {
-  description = "ID of the class proxy class"
-  type        = string
-}
-
 variable "space_id" {
   description = "ID of the space"
   type        = string
@@ -26,4 +21,9 @@ variable "types" {
 variable "depth" {
   default     = 1
   description = "Depth of nested properties to extract"
+}
+
+variable "expected_class_names" {
+  default     = []
+  description = "List of expected class names"
 }
