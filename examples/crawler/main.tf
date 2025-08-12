@@ -35,37 +35,36 @@ resource "tama_specification" "tmdb" {
   }
 }
 
-data "tama_class" "movie-credits" {
+data "tama_class" "movie-details" {
   specification_id = tama_specification.tmdb.id
-  name             = "movie-credits"
+  name             = "movie-details"
 }
 
-module "extract-nested-properties" {
-  source = "../../modules/extract-nested-properties"
+data "tama_action" "movie-credits" {
+  specification_id = tama_specification.tmdb.id
+  identifier       = "movie-credits"
+}
+
+resource "tama_class_corpus" "movie-details-mapping" {
+  class_id = data.tama_class.movie-details.id
+  name     = "Crawl Movie Details"
+  template = file("${path.module}/input-corpus.liquid")
+}
+
+module "crawler" {
+  source = "../../modules/crawler"
 
   depends_on = [module.global]
 
-  space_id         = tama_space.movie-db.id
-  specification_id = tama_specification.tmdb.id
+  space_id        = tama_space.movie-db.id
+  origin_class_id = data.tama_class.movie-details.id
 
-  types = ["array"]
-  depth = 1
+  request_input_corpus_id = tama_class_corpus.movie-details-mapping.id
 
-  class_names = ["movie-credits"]
-  expected_class_names = [
-    "movie-credits.cast",
-    "movie-credits.crew"
-  ]
-}
+  request_relation  = "movie-credits-request"
+  request_action_id = data.tama_action.movie-credits.id
 
-module "network-cast-and-crew" {
-  source = "../../modules/build-relations"
+  response_relation = "movie-credits-response"
 
-  depends_on = [module.global]
-
-  name                = "Network Cast and Crew"
-  space_id            = tama_space.movie-db.id
-  belongs_to_class_id = data.tama_class.movie-credits.id
-
-  class_ids = values(module.extract-nested-properties.extracted_class_ids)
+  validate_record = false
 }
