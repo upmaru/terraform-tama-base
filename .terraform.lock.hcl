@@ -1,0 +1,25 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/upmaru/tama" {
+  version     = "0.2.12"
+  constraints = "~> 0.2"
+  hashes = [
+    "h1:Cii9cvkea+xbfVRyF4yFI4NZcu9T/Z2iW4PnhewXNrw=",
+    "zh:2253e658acfa0b25332efe7ca3a4bf7733e13567ca334d5ebb104a7e39a0e214",
+    "zh:30e3300c945e17067830857c0b0289f2d7b905d9d1c3848e0ce5fd399f221f15",
+    "zh:37709315174c0528ec9ad7b40031b4a5065e4a09923be126412552a2a5a2d7ae",
+    "zh:4fc9659715d331cbbb741b7dc630b496a0b884cacebe2530a1d4d0b4a6d2cac5",
+    "zh:5929dd32f3017828f2033a14cf5f90d3ae4b79d4642d4b6086217d21074672e8",
+    "zh:745404b056c7430e8e67472fab9c04014ee0a65911fb2a743670a876e6c9003e",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:92187356a6bc1b5a4c253f591964891784860390586b8ad58fc6a0e6b211a856",
+    "zh:9ecf339fec9cb042e59480e137afce6a1aaf996a032e79b004921a6557beee92",
+    "zh:aafbca505fd013c376a4ad05ac9be896c3b6b6d14c0dcab6f0dbe972b5a8b0e1",
+    "zh:b312136227c769cf34239a5efe0e1d42cc5fad0570be65841e4bce7e6f025339",
+    "zh:cb3c4a70e725bdedd94c8750a4032f66011dbc92469337ecbb1ad5c5ecd360ac",
+    "zh:d25503103d4979b4bce7a30b023709df2b39d3707ad79912186d0ce1fcf519de",
+    "zh:eb2ea8a9cd6df547206e548d2c257616025402e68801f2ae8d184d594431d4a0",
+    "zh:f51a8194288e428fd65e238ba1335ae66f190f8e256ffb0ff5d401ebf6341ef5",
+  ]
+}
