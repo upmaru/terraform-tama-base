@@ -47,9 +47,9 @@ resource "tama_modular_thought" "response" {
     reference = "tama/actions/response"
     parameters = jsonencode({
       relation        = var.request_relation
-      identifier      = "id"
-      validate_record = false
-      process_entity  = true
+      identifier      = var.identifier
+      validate_record = var.validate_record
+      process_entity  = var.process_entity
     })
   }
 }
@@ -68,7 +68,7 @@ resource "tama_thought_module_input" "convert-to-json" {
 
 resource "tama_node" "this" {
   space_id = var.space_id
-  class_id = var.crawl_class_id
+  class_id = var.origin_class_id
   chain_id = tama_chain.this.id
 
   type = "reactive"

@@ -39,7 +39,7 @@ No modules.
 | <a name="input_expected_class_names"></a> [expected\_class\_names](#input\_expected\_class\_names) | List of expected class names | `list` | `[]` | no |
 | <a name="input_space_id"></a> [space\_id](#input\_space\_id) | ID of the space | `string` | n/a | yes |
 | <a name="input_specification_id"></a> [specification\_id](#input\_specification\_id) | ID of the specification | `string` | n/a | yes |
-| <a name="input_types"></a> [types](#input\_types) | List of types to extract nested properties from can be array, object | `list` | <pre>[<br/>  "array"<br/>]</pre> | no |
+| <a name="input_types"></a> [types](#input\_types) | List of types to extract nested properties from can be array, object | `list` | <pre>[<br>  "array"<br>]</pre> | no |
 
 ## Outputs
 
