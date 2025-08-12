@@ -40,7 +40,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_entity_network_class_id"></a> [entity\_network\_class\_id](#input\_entity\_network\_class\_id) | The id of the entity network class | `string` | n/a | yes |
-| <a name="input_foreign_keys"></a> [foreign\_keys](#input\_foreign\_keys) | The id of the foreign keys | `list(string)` | <pre>[<br>  "thread_id",<br>  "actor_id"<br>]</pre> | no |
+| <a name="input_foreign_keys"></a> [foreign\_keys](#input\_foreign\_keys) | The id of the foreign keys | `list(string)` | <pre>[<br/>  "thread_id",<br/>  "actor_id"<br/>]</pre> | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the corpus | `string` | n/a | yes |
 
 ## Outputs

@@ -32,7 +32,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_classification_class_name"></a> [classification\_class\_name](#input\_classification\_class\_name) | The name of the classification class | `string` | `"class"` | no |
-| <a name="input_classification_properties"></a> [classification\_properties](#input\_classification\_properties) | The properties of the classification class | `list(string)` | <pre>[<br>  "class",<br>  "confidence"<br>]</pre> | no |
+| <a name="input_classification_properties"></a> [classification\_properties](#input\_classification\_properties) | The properties of the classification class | `list(string)` | <pre>[<br/>  "class",<br/>  "confidence"<br/>]</pre> | no |
 | <a name="input_look_back_limit"></a> [look\_back\_limit](#input\_look\_back\_limit) | The number of messages to look back when routing | `number` | `5` | no |
 | <a name="input_message_routing_class_id"></a> [message\_routing\_class\_id](#input\_message\_routing\_class\_id) | The id of the message routing class | `string` | n/a | yes |
 | <a name="input_network_message_thought_id"></a> [network\_message\_thought\_id](#input\_network\_message\_thought\_id) | The id of the network message thought | `string` | n/a | yes |

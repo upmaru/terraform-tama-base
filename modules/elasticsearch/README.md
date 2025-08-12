@@ -33,7 +33,7 @@ No modules.
 | <a name="input_identity_identifier"></a> [identity\_identifier](#input\_identity\_identifier) | The identifier for the identity | `string` | `"ApiKey"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Elasticsearch space | `string` | `"elasticsearch"` | no |
 | <a name="input_schema_version"></a> [schema\_version](#input\_schema\_version) | Schema version for the model | `string` | n/a | yes |
-| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br>    path   = string,<br>    method = string,<br>    codes  = list(number)<br>  })</pre> | <pre>{<br>  "codes": [<br>    200<br>  ],<br>  "method": "GET",<br>  "path": "/_cluster/health"<br>}</pre> | no |
+| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br/>    path   = string,<br/>    method = string,<br/>    codes  = list(number)<br/>  })</pre> | <pre>{<br/>  "codes": [<br/>    200<br/>  ],<br/>  "method": "GET",<br/>  "path": "/_cluster/health"<br/>}</pre> | no |
 
 ## Outputs
 
