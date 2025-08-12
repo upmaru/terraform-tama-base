@@ -53,7 +53,8 @@ module "extract-nested-properties" {
 
   class_names = ["movie-credits"]
   expected_class_names = [
-    "movie-credits.cast", "movie-credits.crew"
+    "movie-credits.cast",
+    "movie-credits.crew"
   ]
 }
 
