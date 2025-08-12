@@ -13,11 +13,6 @@ variable "request_action_id" {
   description = "The ID of the action that will be executed when the request is made."
 }
 
-variable "convert_to_json_corpus_id" {
-  type        = string
-  description = "The ID of the corpus that converts response of the call into JSON."
-}
-
 variable "crawl_class_id" {
   type        = string
   description = "The ID of the class to crawl."

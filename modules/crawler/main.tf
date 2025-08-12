@@ -54,11 +54,16 @@ resource "tama_modular_thought" "response" {
   }
 }
 
+data "tama_class_corpus" "action-response-to-json" {
+  class_id = data.tama_class.action-call.id
+  slug     = "action-call-json"
+}
+
 resource "tama_thought_module_input" "convert-to-json" {
   thought_id = tama_modular_thought.response.id
 
   type            = "concept"
-  class_corpus_id = var.convert_to_json_corpus_id
+  class_corpus_id = data.tama_class_corpus.action-response-to-json.id
 }
 
 resource "tama_node" "this" {
