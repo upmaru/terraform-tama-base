@@ -63,9 +63,12 @@ module "network-cast-and-crew" {
 
   depends_on = [module.global]
 
-  name                = "Network Cast and Crew"
-  space_id            = tama_space.movie-db.id
-  belongs_to_class_id = data.tama_class.movie-credits.id
+  name     = "Network Cast and Crew"
+  space_id = tama_space.movie-db.id
 
   class_ids = values(module.extract-nested-properties.extracted_class_ids)
+
+  can_belongs_to_class_ids = [
+    data.tama_class.movie-credits.id
+  ]
 }
