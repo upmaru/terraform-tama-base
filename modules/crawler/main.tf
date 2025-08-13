@@ -9,7 +9,7 @@ data "tama_class" "action-call" {
 
 resource "tama_chain" "this" {
   space_id = var.space_id
-  name     = "Crawl Movie Credits"
+  name     = var.name
 }
 
 resource "tama_modular_thought" "request" {
