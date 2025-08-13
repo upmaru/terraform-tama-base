@@ -68,7 +68,7 @@ module "network-cast-and-crew" {
 
   class_ids = values(module.extract-nested-properties.extracted_class_ids)
 
-  can_belongs_to_class_ids = [
+  can_belong_to_class_ids = [
     data.tama_class.movie-credits.id
   ]
 }

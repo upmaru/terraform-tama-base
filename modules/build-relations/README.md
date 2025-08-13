@@ -31,7 +31,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_belongs_to_class_id"></a> [belongs\_to\_class\_id](#input\_belongs\_to\_class\_id) | The ID of the class to which the classes belongs to. | `string` | n/a | yes |
+| <a name="input_can_belong_to_class_ids"></a> [can\_belong\_to\_class\_ids](#input\_can\_belong\_to\_class\_ids) | The IDs of the class to which the classes can belongs to. | `list(string)` | n/a | yes |
 | <a name="input_class_ids"></a> [class\_ids](#input\_class\_ids) | The IDs of the classes to network. | `list(string)` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the chain | `string` | n/a | yes |
 | <a name="input_properties"></a> [properties](#input\_properties) | The properties to build relations with. | `list(string)` | <pre>[<br>  "parent_entity_id"<br>]</pre> | no |
