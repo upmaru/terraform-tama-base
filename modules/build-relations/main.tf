@@ -27,10 +27,10 @@ resource "tama_modular_thought" "this" {
 }
 
 resource "tama_thought_path" "this" {
-  count = length(var.can_belongs_to_class_ids)
+  count = length(var.can_belong_to_class_ids)
 
   thought_id      = tama_modular_thought.this.id
-  target_class_id = var.can_belongs_to_class_ids[count.index]
+  target_class_id = var.can_belong_to_class_ids[count.index]
 }
 
 resource "tama_node" "this" {
