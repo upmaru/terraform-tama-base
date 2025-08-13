@@ -14,9 +14,9 @@ variable "properties" {
   default     = ["parent_entity_id"]
 }
 
-variable "belongs_to_class_id" {
-  type        = string
-  description = "The ID of the class to which the classes belongs to."
+variable "can_belongs_to_class_ids" {
+  type        = list(string)
+  description = "The IDs of the class to which the classes can belongs to."
 }
 
 variable "class_ids" {
