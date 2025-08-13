@@ -36,6 +36,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_identifier"></a> [identifier](#input\_identifier) | The identifier of the record. | `string` | `"id"` | no |
+| <a name="input_name"></a> [name](#input\_name) | The name of the chain. | `string` | n/a | yes |
 | <a name="input_origin_class_id"></a> [origin\_class\_id](#input\_origin\_class\_id) | The ID of the class of entities that start the crawl. | `string` | n/a | yes |
 | <a name="input_process_entity"></a> [process\_entity](#input\_process\_entity) | Whether to process the entity. | `bool` | `true` | no |
 | <a name="input_request_action_id"></a> [request\_action\_id](#input\_request\_action\_id) | The ID of the action that will be executed when the request is made. | `string` | n/a | yes |

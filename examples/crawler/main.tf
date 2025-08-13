@@ -56,6 +56,8 @@ module "crawler" {
 
   depends_on = [module.global]
 
+  name = "Movie Credits Crawler"
+
   space_id        = tama_space.movie-db.id
   origin_class_id = data.tama_class.movie-details.id
 

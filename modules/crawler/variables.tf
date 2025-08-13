@@ -3,6 +3,11 @@ variable "space_id" {
   description = "The ID of the space where the chain will be created."
 }
 
+variable "name" {
+  type        = string
+  description = "The name of the chain."
+}
+
 variable "request_input_corpus_id" {
   type        = string
   description = "The ID of the corpus where the request input will be passed into."
