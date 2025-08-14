@@ -39,5 +39,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | n/a |
+| <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | The query schema for elasticsearch. |
+| <a name="output_space_id"></a> [space\_id](#output\_space\_id) | The space id of elasticsearch space |
+| <a name="output_specification_id"></a> [specification\_id](#output\_specification\_id) | The specification id of elasticsearch specification |
 <!-- END_TF_DOCS -->
