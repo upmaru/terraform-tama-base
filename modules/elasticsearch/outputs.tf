@@ -9,3 +9,8 @@ output "space_id" {
   value       = tama_space.this.id
   description = "The space id of elasticsearch space"
 }
+
+output "specification_id" {
+  value       = tama_specification.manage.id
+  description = "The specification id of elasticsearch specification"
+}
