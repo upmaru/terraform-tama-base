@@ -13,7 +13,7 @@ Base modules for Tama
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | 0.2.13 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | 0.2.15 |
 
 ## Modules
 
