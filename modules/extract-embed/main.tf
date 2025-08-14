@@ -1,3 +1,17 @@
+data "tama_space" "global" {
+  id = "global"
+}
+
+data "tama_class" "answer" {
+  space_id = data.tama_space.global.id
+  name     = "answer"
+}
+
+data "tama_class_corpus" "answer-content" {
+  class_id = data.tama_class.answer.id
+  slug     = "answer-content"
+}
+
 resource "tama_chain" "this" {
   space_id = var.space_id
 
@@ -13,21 +27,22 @@ resource "tama_modular_thought" "extract" {
   module {
     reference = "tama/entities/extraction"
     parameters = jsonencode({
-      relations = [var.relation]
+      relations = var.relations
     })
   }
 }
 
 resource "tama_modular_thought" "embed" {
+  count    = length(var.relations)
   chain_id = tama_chain.this.id
 
-  index    = 1
-  relation = "embedding"
+  index    = count.index + 1
+  relation = "${var.relations[count.index]}-embedding"
 
   module {
     reference = "tama/concepts/embed"
     parameters = jsonencode({
-      relation = var.relation
+      relation = var.relations[count.index]
     })
   }
 }
@@ -43,8 +58,10 @@ resource "tama_node" "this" {
 }
 
 resource "tama_thought_module_input" "input-answer-corpus" {
-  thought_id = tama_modular_thought.embed.id
+  count = length(var.relations)
+
+  thought_id = tama_modular_thought.embed[count.index].id
 
   type            = "concept"
-  class_corpus_id = var.answer_class_corpus_id
+  class_corpus_id = data.tama_class_corpus.answer-content.id
 }
