@@ -89,7 +89,17 @@ variable "parents" {
           name     = "merge"
         }
       })
-    }))
+      }), {
+      relations  = []
+      embeddings = "exclude"
+      content = {
+        action = "merge"
+        merge = {
+          location = "concept"
+          name     = "merge"
+        }
+      }
+    })
 
     parents  = optional(list(object({})), [])
     children = optional(list(object({})), [])
@@ -129,7 +139,17 @@ variable "children" {
           name     = "merge"
         }
       })
-    }))
+      }), {
+      relations  = []
+      embeddings = "exclude"
+      content = {
+        action = "merge"
+        merge = {
+          location = "concept"
+          name     = "merge"
+        }
+      }
+    })
 
     parents  = optional(list(object({})), [])
     children = optional(list(object({})), [])
