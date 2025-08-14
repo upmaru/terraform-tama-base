@@ -76,13 +76,13 @@ variable "parents" {
     concept = optional(object({
       relations  = optional(list(string), [])
       embeddings = optional(string, "exclude")
-      content = object({
+      content = optional(object({
         action = string
         merge = object({
           location = string
           name     = string
         })
-        }, {
+        }), {
         action = "merge"
         merge = {
           location = "concept"
@@ -116,13 +116,13 @@ variable "children" {
     concept = optional(object({
       relations  = optional(list(string), [])
       embeddings = optional(string, "exclude")
-      content = object({
+      content = optional(object({
         action = string
         merge = object({
           location = string
           name     = string
         })
-        }, {
+        }), {
         action = "merge"
         merge = {
           location = "concept"
