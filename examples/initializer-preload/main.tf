@@ -74,4 +74,8 @@ module "preloader" {
       location = "root"
     }
   }
+
+  children = [
+    { class = "movie-credits", as = "object" }
+  ]
 }
