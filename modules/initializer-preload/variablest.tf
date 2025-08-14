@@ -71,13 +71,23 @@ variable "parents" {
         element = string
         matches = list(string)
       }))
-    }))
+    }), { rejections = [] })
 
     concept = optional(object({
-      action = string
-      merge = object({
-        location = string
-        name     = string
+      relations  = optional(list(string), [])
+      embeddings = optional(string, "exclude")
+      content = object({
+        action = string
+        merge = object({
+          location = string
+          name     = string
+        })
+        }, {
+        action = "merge"
+        merge = {
+          location = "concept"
+          name     = "merge"
+        }
       })
     }))
 
@@ -101,13 +111,23 @@ variable "children" {
         element = string
         matches = list(string)
       }))
-    }))
+    }), { rejections = [] })
 
     concept = optional(object({
-      action = string
-      merge = object({
-        location = string
-        name     = string
+      relations  = optional(list(string), [])
+      embeddings = optional(string, "exclude")
+      content = object({
+        action = string
+        merge = object({
+          location = string
+          name     = string
+        })
+        }, {
+        action = "merge"
+        merge = {
+          location = "concept"
+          name     = "merge"
+        }
       })
     }))
 
