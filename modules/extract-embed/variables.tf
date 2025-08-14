@@ -8,15 +8,10 @@ variable "name" {
   type        = string
 }
 
-variable "answer_class_corpus_id" {
-  description = "The answer class corpus id"
-  type        = string
-}
-
-variable "relation" {
-  description = "The relation"
-  type        = string
-  default     = "content"
+variable "relations" {
+  description = "The relations"
+  type        = list(string)
+  default     = ["content"]
 }
 
 variable "embeddable_class_ids" {
