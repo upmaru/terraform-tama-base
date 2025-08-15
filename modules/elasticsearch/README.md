@@ -20,6 +20,8 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [tama_class.elasticsearch-mapping](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
+| [tama_class_corpus.elasticsearch-mapping](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_source_identity.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_identity) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
 | [tama_specification.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/specification) | resource |
