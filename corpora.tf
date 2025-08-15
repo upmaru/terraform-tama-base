@@ -24,3 +24,11 @@ resource "tama_class_corpus" "action-call-json-corpus" {
   name     = "Action Call JSON"
   template = "{{ data | json }}"
 }
+
+resource "tama_class_corpus" "collection-sampling" {
+  class_id = tama_class.schemas["collection"].id
+
+  main     = true
+  name     = "Sample Items"
+  template = file("${path.module}/sampling.liquid")
+}

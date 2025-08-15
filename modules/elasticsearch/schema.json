@@ -1,0 +1,13 @@
+{
+  "title": "elasticsearch-mapping",
+  "description": "For generating elasticsearch index mapping",
+  "properties": {
+    "mappings": {
+      "type": "object",
+      "description": "The Elasticsearch mapping for the data."
+    }
+  },
+  "type": "object",
+  "strict": false,
+  "required": ["mappings"]
+}

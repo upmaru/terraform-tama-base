@@ -3,6 +3,17 @@ resource "tama_space" "this" {
   type = "component"
 }
 
+resource "tama_class" "elasticsearch-mapping" {
+  space_id    = tama_space.this.id
+  schema_json = jsonencode(jsondecode(file("${path.module}/schema.json")))
+}
+
+resource "tama_class_corpus" "elasticsearch-mapping" {
+  class_id = tama_class.elasticsearch-mapping.id
+  name     = "Elasticsearch Mapping"
+  template = file("${path.module}/mapping.liquid")
+}
+
 resource "tama_specification" "manage" {
   space_id = tama_space.this.id
   endpoint = var.endpoint
