@@ -10,6 +10,8 @@ module "global" {
 module "elasticsearch" {
   source = "../../modules/elasticsearch"
 
+  depends_on = [module.global]
+
   name           = "elasticsearch"
   schema_version = "1.0.0"
   endpoint       = "https://elasticsearch.arrakis.upmaru.network"

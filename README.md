@@ -31,6 +31,7 @@ No modules.
 | [tama_class.schemas](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class_corpus.action-call-json-corpus](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_class_corpus.answer-corpus](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
+| [tama_class_corpus.collection-sampling](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_class_corpus.context-metadata-corpus](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_modular_thought.validate](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/modular_thought) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
