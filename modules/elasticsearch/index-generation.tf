@@ -55,7 +55,7 @@ resource "tama_prompt" "index-generation-rules" {
 }
 
 resource "tama_thought_context" "index-generation-rules" {
-  thought_id = tama_modular_thought.generate-index-mapping.chain_id
+  thought_id = tama_modular_thought.generate-index-mapping.id
   prompt_id  = tama_prompt.index-generation-rules.id
 }
 
