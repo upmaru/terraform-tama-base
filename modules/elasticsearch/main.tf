@@ -5,7 +5,12 @@ resource "tama_space" "this" {
 
 resource "tama_class" "elasticsearch-mapping" {
   space_id    = tama_space.this.id
-  schema_json = jsonencode(jsondecode(file("${path.module}/schema.json")))
+  schema_json = jsonencode(jsondecode(file("${path.module}/elasticsearch-mapping.json")))
+}
+
+resource "tama_class" "index-generation" {
+  space_id    = tama_space.this.id
+  schema_json = jsonencode(jsondecode(file("${path.module}/index-generation.json")))
 }
 
 resource "tama_class_corpus" "elasticsearch-mapping" {
