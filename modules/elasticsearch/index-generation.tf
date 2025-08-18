@@ -182,6 +182,7 @@ resource "tama_thought_initializer" "merge-as-dynamic-entity" {
   count = length(local.import_and_merge_thought_ids)
 
   thought_id = local.import_and_merge_thought_ids[count.index]
+  reference  = "tama/initializers/merge"
 
   index    = 1
   class_id = tama_class.index-generation.id
