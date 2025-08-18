@@ -119,7 +119,6 @@ components:
         contextual meaning of the text is critical, such as natural language searches.
         The search leverages vector embeddings and semantic reranking to prioritize
         results based on meaning rather than exact keyword matches.
-
         "
       properties:
         _source:
