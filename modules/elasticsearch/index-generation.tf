@@ -3,13 +3,17 @@ resource "tama_chain" "index-generation" {
   name     = "Index Generation"
 }
 
+locals {
+  mappings_relation = "mappings"
+}
+
 //
 // Generate an index mappings for a sample data.
 //
 resource "tama_modular_thought" "generate-index-mapping" {
   chain_id        = tama_chain.index-generation.id
   index           = 0
-  relation        = "mappings"
+  relation        = local.mappings_relation
   output_class_id = tama_class.elasticsearch-mapping.id
 
   module {
@@ -182,7 +186,7 @@ resource "tama_thought_initializer" "merge-as-dynamic-entity" {
   index    = 1
   class_id = tama_class.index-generation.id
   parameters = jsonencode({
-    relations = ["mappings", "sample"]
+    relations = [local.mappings_relation, "sample"]
   })
 }
 
