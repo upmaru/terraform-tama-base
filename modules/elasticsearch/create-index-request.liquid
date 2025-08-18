@@ -1,0 +1,13 @@
+{
+  "path": {
+    "index": "tama-{{ data.sample.space }}-{{ data.sample.name }}-{{ data.sample.created_at }}"
+  },
+  "body": {
+    "aliases": {
+      "tama-{{ data.sample.space }}-{{ data.sample.name }}": {
+        "is_write_index": true
+      }
+    },
+    "mappings": {{ data.mappings.mappings | json }}
+  }
+}

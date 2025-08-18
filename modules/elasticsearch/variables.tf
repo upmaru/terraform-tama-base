@@ -37,3 +37,8 @@ variable "validation" {
     codes  = [200]
   }
 }
+
+variable "index_mapping_generation_model_id" {
+  type        = string
+  description = "The model id for index mapping generation"
+}

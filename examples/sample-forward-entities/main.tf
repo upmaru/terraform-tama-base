@@ -7,15 +7,45 @@ module "global" {
   source = "../../"
 }
 
+variable "xai_api_key" {}
+module "xai" {
+  source = "../../modules/inference-service"
+
+  space_id = module.global.space.id
+  api_key  = var.xai_api_key
+  endpoint = "https://api.x.ai/v1"
+  name     = "xai"
+
+  requests_per_second = 4
+
+  models = [
+    {
+      identifier = "grok-3-mini"
+      path       = "/chat/completions"
+      parameters = {
+        reasoning_effort = "high"
+      }
+    },
+    {
+      identifier = "grok-3-mini-fast"
+      path       = "/chat/completions"
+      parameters = {
+        reasoning_effort = "low"
+      }
+    }
+  ]
+}
+
 module "elasticsearch" {
   source = "../../modules/elasticsearch"
 
   depends_on = [module.global]
 
-  name           = "elasticsearch"
-  schema_version = "1.0.0"
-  endpoint       = "https://elasticsearch.arrakis.upmaru.network"
-  api_key        = var.elasticsearch_api_key
+  name                              = "elasticsearch"
+  schema_version                    = "1.0.0"
+  endpoint                          = "https://elasticsearch.arrakis.upmaru.network"
+  api_key                           = var.elasticsearch_api_key
+  index_mapping_generation_model_id = module.xai.model_ids["grok-3-mini"]
 }
 
 resource "tama_space" "movie-db" {
