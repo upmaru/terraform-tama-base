@@ -14,3 +14,8 @@ output "specification_id" {
   value       = tama_specification.manage.id
   description = "The specification id of elasticsearch specification"
 }
+
+output "index_generation_class_id" {
+  value       = tama_class.index-generation.id
+  description = "The class id of index generation class"
+}

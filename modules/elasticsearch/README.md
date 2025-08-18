@@ -21,6 +21,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [tama_class.elasticsearch-mapping](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
+| [tama_class.index-generation](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class_corpus.elasticsearch-mapping](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_source_identity.manage](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/source_identity) | resource |
 | [tama_space.this](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/space) | resource |
@@ -41,6 +42,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_index_generation_class_id"></a> [index\_generation\_class\_id](#output\_index\_generation\_class\_id) | The class id of index generation class |
 | <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | The query schema for elasticsearch. |
 | <a name="output_space_id"></a> [space\_id](#output\_space\_id) | The space id of elasticsearch space |
 | <a name="output_specification_id"></a> [specification\_id](#output\_specification\_id) | The specification id of elasticsearch specification |
