@@ -23,5 +23,5 @@ resource "tama_model" "this" {
   source_id  = tama_source.this.id
   identifier = each.key
   path       = each.value.path
-  parameters = jsonencode(each.value.parameters)
+  parameters = each.value.parameters
 }

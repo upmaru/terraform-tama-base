@@ -22,16 +22,20 @@ module "xai" {
     {
       identifier = "grok-3-mini"
       path       = "/chat/completions"
-      parameters = {
+      parameters = jsonencode({
         reasoning_effort = "high"
-      }
+      })
     },
     {
       identifier = "grok-3-mini-fast"
       path       = "/chat/completions"
-      parameters = {
+      parameters = jsonencode({
         reasoning_effort = "low"
-      }
+      })
+    },
+    {
+      identifier = "grok-4"
+      path       = "/chat/completions"
     }
   ]
 }
