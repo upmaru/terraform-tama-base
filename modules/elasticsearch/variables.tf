@@ -42,3 +42,9 @@ variable "index_mapping_generation_model_id" {
   type        = string
   description = "The model id for index mapping generation"
 }
+
+variable "index_mapping_generation_temperature" {
+  type        = number
+  default     = 0.0
+  description = "The temperature to use for index generation mapping"
+}
