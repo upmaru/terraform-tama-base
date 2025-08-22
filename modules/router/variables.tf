@@ -52,3 +52,19 @@ variable "routable_class_ids" {
   description = "The ids of the classes to network"
   type        = list(string)
 }
+
+variable "routing_model_id" {
+  description = "The model to use for routing"
+  type        = string
+}
+
+variable "routing_model_parameters" {
+  description = "The parameters for the routing model"
+  type        = string
+}
+
+variable "routing_model_temperature" {
+  description = "The temperature for the routing mode"
+  type        = number
+  default     = 1.0
+}

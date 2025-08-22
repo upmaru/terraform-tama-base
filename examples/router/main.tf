@@ -9,10 +9,33 @@ module "global" {
 
 module "memovee" {
   source     = "../../modules/messaging"
-  depends_on = [module.global.schemas]
+  depends_on = [module.global]
 
   name                    = "memovee"
   entity_network_class_id = module.global.schemas["entity-network"].id
+}
+
+variable "openai_api_key" {}
+module "openai" {
+  source = "../../modules/inference-service"
+
+  space_id = module.global.space.id
+  api_key  = var.openai_api_key
+  endpoint = "https://api.openai.com/v1"
+  name     = "openai"
+
+  requests_per_second = 4
+
+  models = [
+    {
+      identifier = "gpt-5-mini"
+      path       = "/chat/completions"
+      parameters = jsonencode({
+        reasoning_effort = "high"
+        service_tier     = "flex"
+      })
+    }
+  ]
 }
 
 module "router" {
@@ -28,4 +51,9 @@ module "router" {
   ]
 
   prompt = file("${path.module}/prompt.md")
+
+  routing_model_id = module.openai.model_ids.gpt-5-mini
+  routing_model_parameters = jsonencode({
+    reasoning_effort = "minimal"
+  })
 }

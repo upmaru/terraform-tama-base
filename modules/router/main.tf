@@ -57,3 +57,13 @@ resource "tama_node" "network" {
 
   type = "reactive"
 }
+
+resource "tama_thought_processor" "this" {
+  thought_id = tama_modular_thought.routing.id
+  model_id   = var.routing_model_id
+
+  completion {
+    temperature = var.routing_model_temperature
+    parameters  = var.routing_model_parameters
+  }
+}
