@@ -4,7 +4,7 @@ terraform {
   required_providers {
     tama = {
       source  = "upmaru/tama"
-      version = "~> 0.2"
+      version = "~> 0.3"
     }
   }
 }
