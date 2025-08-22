@@ -27,7 +27,8 @@ resource "tama_thought_processor" "for-index-generation" {
   model_id = var.index_mapping_generation_model_id
 
   completion {
-    temperature = var.index_mapping_generation_temperature
+    temperature = var.index_mapping_generation_model_temperature
+    parameters  = var.index_mapping_generation_model_parameters
   }
 }
 
