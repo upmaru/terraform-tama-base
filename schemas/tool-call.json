@@ -1,5 +1,7 @@
 {
   "type": "object",
+  "title": "tool-call",
+  "description": "Schema for a tool call concept",
   "properties": {
     "messages": {
       "type": "array",
