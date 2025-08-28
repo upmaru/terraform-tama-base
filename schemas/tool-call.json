@@ -98,12 +98,17 @@
         "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
       }
     },
+    "loop": {
+      "type": "boolean",
+      "description": "Indicates whether the tool call should be repeated."
+    },
     "next": {
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "description": "List of tool names to be used in the next tool call."
     }
   },
-  "required": ["messages", "entity_ids", "next"]
+  "required": ["messages", "entity_ids", "loop", "next"]
 }
