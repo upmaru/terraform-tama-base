@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": ["assistant", "tool"]
+          },
+          "content": {
+            "type": ["string", "null"]
+          },
+          "refusal": {
+            "type": ["string", "null"]
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["function"]
+                },
+                "function": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "arguments": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["name", "arguments"]
+                }
+              },
+              "required": ["id", "type", "function"]
+            }
+          },
+          "code": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "content_type": {
+            "type": "string",
+            "enum": ["application/json"]
+          },
+          "tool_call_id": {
+            "type": "string"
+          }
+        },
+        "required": ["role"],
+        "oneOf": [
+          {
+            "properties": {
+              "role": { "const": "assistant" },
+              "content": {},
+              "refusal": {},
+              "tool_calls": {}
+            },
+            "required": ["content", "refusal", "tool_calls"]
+          },
+          {
+            "properties": {
+              "role": { "const": "tool" },
+              "code": {},
+              "name": {},
+              "content": {},
+              "content_type": {},
+              "tool_call_id": {}
+            },
+            "required": [
+              "code",
+              "name",
+              "content",
+              "content_type",
+              "tool_call_id"
+            ]
+          }
+        ]
+      }
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+      }
+    },
+    "next": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["messages", "entity_ids", "next"]
+}

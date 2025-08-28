@@ -2,9 +2,9 @@
   "title": "action-call",
   "description": "An action call is a request to execute an action.",
   "properties": {
-    "something": {
+    "name": {
       "type": "string",
-      "description": "Something"
+      "description": "The name of the action call"
     },
     "code": {
       "description": "The status of the action call",
