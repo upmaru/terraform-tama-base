@@ -3,7 +3,7 @@ resource "tama_modular_thought" "this" {
   relation = var.relation
   index    = var.index
 
-  output_class_id = var.assistant_response_class_id
+  output_class_id = data.tama_class.tool-call.id
 
   module {
     reference = "tama/agentic/tooling"
@@ -22,4 +22,14 @@ module "tooling-context" {
 
   thought_id = tama_modular_thought.this.id
   contexts   = var.contexts
+}
+
+resource "tama_thought_processor" "this" {
+  thought_id = tama_modular_thought.this.id
+  model_id   = var.tool_call_model_id
+
+  completion {
+    temperature = var.tool_call_model_temperature
+    parameters  = jsonencode(var.tool_call_model_parameters)
+  }
 }

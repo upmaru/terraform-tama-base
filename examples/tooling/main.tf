@@ -44,18 +44,58 @@ resource "tama_chain" "load-profile-and-greet" {
   name     = "Load Profile and Greet"
 }
 
+variable "xai_api_key" {}
+module "xai" {
+  source = "../../modules/inference-service"
+
+  space_id = module.global.space.id
+  api_key  = var.xai_api_key
+  endpoint = "https://api.x.ai/v1"
+  name     = "xai"
+
+  requests_per_second = 4
+
+  models = [
+    {
+      identifier = "grok-3-mini"
+      path       = "/chat/completions"
+      parameters = jsonencode({
+        reasoning_effort = "high"
+      })
+    },
+    {
+      identifier = "grok-3-mini-fast"
+      path       = "/chat/completions"
+      parameters = jsonencode({
+        reasoning_effort = "low"
+      })
+    },
+    {
+      identifier = "grok-4"
+      path       = "/chat/completions"
+    }
+  ]
+}
 
 module "load-profile-tooling" {
   source = "../../modules/tooling"
 
-  chain_id                    = tama_chain.load-profile-and-greet.id
-  assistant_response_class_id = module.global.schemas["assistant-response"].id
-  index                       = 0
-  relation                    = "tooling"
+  depends_on = [module.global.schemas]
+
+  chain_id = tama_chain.load-profile-and-greet.id
+  index    = 0
+  relation = "tooling"
 
   action_ids = [
     data.tama_action.get-profile.id
   ]
+
+  tool_call_model_id          = module.xai.model_ids.grok-3-mini
+  tool_call_model_temperature = 0.0
+  tool_call_model_parameters = {
+    reasoning_effort = "high"
+    temperature      = 1.0
+  }
 
   contexts = {
     check_profile = {
