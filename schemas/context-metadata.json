@@ -3,6 +3,10 @@
   "description": "A context metadata is a metadata about a context.",
   "type": "object",
   "properties": {
+    "origin_entity_identifier": {
+      "type": "string",
+      "description": "The identifier of the origin message"
+    },
     "actor_id": {
       "type": "integer",
       "description": "The id of the actor"
@@ -12,5 +16,5 @@
       "description": "The current timestamp"
     }
   },
-  "required": ["actor_id", "current_timestamp"]
+  "required": ["origin_entity_identifier", "actor_id", "current_timestamp"]
 }
