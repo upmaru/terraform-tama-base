@@ -11,11 +11,9 @@ output "network_message_thought_id" {
 output "schemas" {
   description = "Scheams for the messaging space"
   value = {
-    actor             = tama_class.actor,
-    thread            = tama_class.thread,
-    user-message      = tama_class.user-message,
-    assistant-message = tama_class.assistant-message,
-    tool-message      = tama_class.tool-message,
-    response          = tama_class.response
+    actor        = tama_class.actor,
+    thread       = tama_class.thread,
+    user-message = tama_class.user-message,
+    response     = tama_class.response
   }
 }

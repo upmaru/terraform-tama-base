@@ -31,18 +31,6 @@ resource "tama_class_corpus" "user-message-corpus" {
   EOT
 }
 
-resource "tama_class" "assistant-message" {
-  space_id = tama_space.this.id
-
-  schema_json = jsonencode(jsondecode(file("${path.module}/schemas/assistant-message.json")))
-}
-
-resource "tama_class" "tool-message" {
-  space_id = tama_space.this.id
-
-  schema_json = jsonencode(jsondecode(file("${path.module}/schemas/tool-message.json")))
-}
-
 resource "tama_class" "response" {
   space_id = tama_space.this.id
 
