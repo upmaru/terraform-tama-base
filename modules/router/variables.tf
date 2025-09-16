@@ -3,9 +3,24 @@ variable "root_messaging_space_id" {
   type        = string
 }
 
-variable "network_message_thought_id" {
-  description = "The id of the network message thought"
+variable "author_class_name" {
+  description = "The name of the author class"
   type        = string
+}
+
+variable "thread_class_name" {
+  description = "The name of the thread class"
+  type        = string
+}
+
+variable "message_class_name" {
+  description = "The name of the message class"
+  type        = string
+}
+
+variable "threadable_relations" {
+  description = "The relations to load for the threadable"
+  type        = list(string)
 }
 
 variable "message_routing_class_id" {

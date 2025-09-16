@@ -3,19 +3,14 @@ resource "tama_chain" "this" {
   name     = "Message Routing"
 }
 
-resource "tama_delegated_thought" "network" {
-  chain_id = tama_chain.this.id
-  index    = 0
-
-  delegation {
-    target_thought_id = var.network_message_thought_id
-  }
+locals {
+  relation = "routing"
 }
 
 resource "tama_modular_thought" "routing" {
   chain_id        = tama_chain.this.id
-  index           = 1
-  relation        = "routing"
+  index           = 0
+  relation        = local.relation
   output_class_id = var.message_routing_class_id
 
   module {
@@ -27,9 +22,20 @@ resource "tama_modular_thought" "routing" {
       }
 
       classification = {
-        class_name      = var.classification_class_name
-        properties      = var.classification_properties
-        look_back_limit = var.look_back_limit
+        class_name = var.classification_class_name
+        properties = var.classification_properties
+        thread = {
+          limit = 2
+          classes = {
+            author  = var.author_class_name
+            thread  = var.thread_class_name
+            message = var.message_class_name
+          }
+          relations = {
+            routing    = local.relation
+            threadable = var.threadable_relations
+          }
+        }
       }
     })
   }
@@ -48,7 +54,7 @@ resource "tama_thought_context" "routing-context" {
   prompt_id  = tama_prompt.this.id
 }
 
-resource "tama_node" "network" {
+resource "tama_node" "this" {
   count = length(var.routable_class_ids)
 
   space_id = var.root_messaging_space_id
