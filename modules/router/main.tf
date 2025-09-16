@@ -7,7 +7,7 @@ locals {
   relation = "routing"
 }
 
-resource "tama_modular_thought" "routing" {
+resource "tama_modular_thought" "this" {
   chain_id        = tama_chain.this.id
   index           = 0
   relation        = local.relation
