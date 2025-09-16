@@ -49,7 +49,7 @@ resource "tama_prompt" "this" {
 }
 
 resource "tama_thought_context" "routing-context" {
-  thought_id = tama_modular_thought.routing.id
+  thought_id = tama_modular_thought.this.id
   layer      = 0
   prompt_id  = tama_prompt.this.id
 }
@@ -65,7 +65,7 @@ resource "tama_node" "this" {
 }
 
 resource "tama_thought_processor" "this" {
-  thought_id = tama_modular_thought.routing.id
+  thought_id = tama_modular_thought.this.id
   model_id   = var.routing_model_id
 
   completion {
