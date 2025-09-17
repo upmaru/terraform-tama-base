@@ -25,15 +25,15 @@ resource "tama_modular_thought" "this" {
         class_name = var.classification_class_name
         properties = var.classification_properties
         thread = {
-          limit = 6
+          limit = 10
           classes = {
             author  = var.author_class_name
             thread  = var.thread_class_name
             message = var.message_class_name
           }
           relations = {
-            routing    = local.relation
-            threadable = var.threadable_relations
+            routing = local.relation
+            focus   = var.focus_relations
           }
         }
       }
