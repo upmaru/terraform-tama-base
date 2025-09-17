@@ -20,6 +20,14 @@
       "type": "integer",
       "description": "The id of the entity that the message is forwarded to."
     },
+    "referenced_tool_call_ids": {
+      "type": "array",
+      "description": "List of referenced tool_call_ids",
+      "items": {
+        "type": "string",
+        "description": "The tool_call_id with data referenced by the user"
+      }
+    },
     "chunks": {
       "type": "array",
       "description": "Array of similar items",
@@ -42,5 +50,5 @@
       }
     }
   },
-  "required": ["forwarded_to_entity_id", "type"]
+  "required": ["forwarded_to_entity_id", "type", "class", "confidence"]
 }
