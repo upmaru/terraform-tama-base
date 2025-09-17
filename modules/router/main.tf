@@ -25,7 +25,7 @@ resource "tama_modular_thought" "this" {
         class_name = var.classification_class_name
         properties = var.classification_properties
         thread = {
-          limit = 2
+          limit = 6
           classes = {
             author  = var.author_class_name
             thread  = var.thread_class_name

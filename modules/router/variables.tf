@@ -60,7 +60,7 @@ variable "classification_class_name" {
 variable "classification_properties" {
   description = "The properties of the classification class"
   type        = list(string)
-  default     = ["class", "confidence"]
+  default     = ["class", "confidence", "referenced_tool_call_ids"]
 }
 
 variable "routable_class_ids" {
