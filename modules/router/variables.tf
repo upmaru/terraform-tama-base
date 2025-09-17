@@ -18,8 +18,8 @@ variable "message_class_name" {
   type        = string
 }
 
-variable "threadable_relations" {
-  description = "The relations to load for the threadable"
+variable "focus_relations" {
+  description = "The relations to focus on for the thread"
   type        = list(string)
 }
 
