@@ -12,7 +12,7 @@ resource "tama_class_corpus" "context-metadata-corpus" {
   main     = true
   name     = "Context Metadata"
   template = <<-EOT
-  ACTOR ID: {{ data.actor_id }}
+  ACTOR IDENTIFIER: {{ data.actor_identifier }}
   CURRENT DATE AND TIME: {{ data.current_timestamp }}
   ORIGIN ENTITY IDENTIFIER: {{ data.origin_entity_identifier }}
   EOT
