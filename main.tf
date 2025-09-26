@@ -47,9 +47,6 @@ resource "tama_class" "forwarding" {
     title       = "forwarding"
     description = <<-EOT
     A forwarding is a forwarding of a message to another entity.
-
-    ## Fields:
-    - forwarded_to_entity_id: The id of the entity that the message is forwarded to.
     EOT
     type        = "object"
     properties = jsonencode({

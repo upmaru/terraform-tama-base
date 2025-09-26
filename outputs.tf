@@ -30,3 +30,8 @@ output "action_call_json_corpus_id" {
   description = "ID of the Action Call JSON Corpus"
   value       = tama_class_corpus.action-call-json-corpus.id
 }
+
+output "forwardable_class_template" {
+  description = "The template to use for all the message forwarding classes"
+  value       = file("schemas/forwardable-class-template.json")
+}

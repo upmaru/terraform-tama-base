@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "title": "${title}",
+  "description": "${description}",
+  "properties": {
+    "forwarded_from_concept_id": {
+      "description": "The concept id that forwarded this message.",
+      "type": ["string", "null"]
+    },
+    "origin_entity_id": {
+      "description": "The origin entity with the original message",
+      "type": "string"
+    },
+    "directive_ids": {
+      "type": "array",
+      "description": "The id of the directives to pass to the entity.",
+      "items": {
+        "type": "string",
+        "description": "The id of the directive."
+      }
+    }
+  },
+  "required": ["origin_entity_id", "forwarded_from_concept_id", "messages"]
+}
