@@ -9,6 +9,6 @@ output "schemas" {
     actor        = tama_class.actor,
     thread       = tama_class.thread,
     user-message = tama_class.user-message,
-    response     = tama_class.response
+    response     = module.response.class
   }
 }

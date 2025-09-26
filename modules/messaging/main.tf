@@ -31,8 +31,11 @@ resource "tama_class_corpus" "user-message-corpus" {
   EOT
 }
 
-resource "tama_class" "response" {
-  space_id = tama_space.this.id
 
-  schema_json = jsonencode(jsondecode(file("${path.module}/schemas/response.json")))
+module "response" {
+  source = "../../modules/forwardable-class"
+
+  space_id    = tama_space.this.id
+  title       = "response"
+  description = "Class to hold entities that kick off response generation."
 }
