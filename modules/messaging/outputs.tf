@@ -1,5 +1,5 @@
-output "space" {
-  value       = tama_space.this
+output "space_id" {
+  value       = tama_space.this.id
   description = "The messaging space id"
 }
 
@@ -9,6 +9,6 @@ output "schemas" {
     actor        = tama_class.actor,
     thread       = tama_class.thread,
     user-message = tama_class.user-message,
-    response     = tama_class.response
+    response     = module.response.class
   }
 }

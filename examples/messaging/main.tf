@@ -12,6 +12,4 @@ module "memovee" {
   depends_on = [module.global.schemas]
 
   name = "memovee"
-
-  entity_network_class_id = module.global.schemas["entity-network"].id
 }

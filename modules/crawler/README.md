@@ -48,5 +48,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_chain_id"></a> [chain\_id](#output\_chain\_id) | The chain\_id of the crawler |
 <!-- END_TF_DOCS -->

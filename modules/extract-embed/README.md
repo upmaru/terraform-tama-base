@@ -35,7 +35,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_embeddable_class_ids"></a> [embeddable\_class\_ids](#input\_embeddable\_class\_ids) | The embeddable class IDs | `list(string)` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name of the Chain | `string` | n/a | yes |
-| <a name="input_relations"></a> [relations](#input\_relations) | The relations | `list(string)` | <pre>[<br>  "content"<br>]</pre> | no |
+| <a name="input_relations"></a> [relations](#input\_relations) | The relations | `list(string)` | <pre>[<br/>  "content"<br/>]</pre> | no |
 | <a name="input_space_id"></a> [space\_id](#input\_space\_id) | The Space ID | `string` | n/a | yes |
 
 ## Outputs
