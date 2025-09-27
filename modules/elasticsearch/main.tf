@@ -8,9 +8,12 @@ resource "tama_class" "elasticsearch-mapping" {
   schema_json = jsonencode(jsondecode(file("${path.module}/elasticsearch-mapping.json")))
 }
 
-resource "tama_class" "index-generation" {
+module "index-generation-forwardable" {
+  source = "../../modules/forwardable-class"
+
   space_id    = tama_space.this.id
-  schema_json = jsonencode(jsondecode(file("${path.module}/index-generation.json")))
+  title       = "index-generation"
+  description = "For generating elasticsearch index"
 }
 
 resource "tama_class_corpus" "elasticsearch-mapping" {

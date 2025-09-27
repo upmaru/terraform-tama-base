@@ -52,6 +52,11 @@ variable "prompt_id" {
   description = "The prompt with constraints and rules for index generation"
 }
 
+variable "forward_to_thought_id" {
+  type        = string
+  description = "The ID of the index generation thought."
+}
+
 variable "preload_children" {
   type = list(object({
     class = string
