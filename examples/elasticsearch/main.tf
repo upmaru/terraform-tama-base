@@ -51,9 +51,10 @@ module "elasticsearch" {
   schema_version = "1.0.0"
   endpoint       = "https://elasticsearch.arrakis.upmaru.network"
 
-  api_key                           = var.elasticsearch_api_key
-  index_mapping_generation_model_id = module.xai.model_ids.grok-3-mini
+  api_key = var.elasticsearch_api_key
 
+  index_mapping_generation_model_id          = module.xai.model_ids.grok-3-mini
+  index_mapping_generation_model_temperature = 1.0
   index_mapping_generation_model_parameters = jsonencode({
     reasoning_effort = "high"
   })
