@@ -36,7 +36,8 @@ resource "tama_thought_initializer" "import-sample-for-generate" {
   thought_id = tama_modular_thought.generate-index-mapping.id
 
   reference = "tama/initializers/import"
-  class_id  = tama_class.index-generation.id
+  class_id  = module.index-generation-forwardable.class.id
+
   parameters = jsonencode({
     resources = [
       {
@@ -157,7 +158,7 @@ resource "tama_thought_initializer" "import-sample" {
   thought_id = local.import_and_merge_thought_ids[count.index]
 
   index     = 0
-  class_id  = tama_class.index-generation.id
+  class_id  = module.index-generation-forwardable.class.id
   reference = "tama/initializers/import"
   parameters = jsonencode({
     resources = [
@@ -186,7 +187,7 @@ resource "tama_thought_initializer" "merge-as-dynamic-entity" {
   reference  = "tama/initializers/merge"
 
   index    = 1
-  class_id = tama_class.index-generation.id
+  class_id = module.index-generation-forwardable.class.id
   parameters = jsonencode({
     relations = [local.mappings_relation, "sample"]
   })
@@ -194,7 +195,7 @@ resource "tama_thought_initializer" "merge-as-dynamic-entity" {
 
 resource "tama_node" "handle-index-generation" {
   space_id = tama_space.this.id
-  class_id = tama_class.index-generation.id
+  class_id = module.index-generation-forwardable.class.id
   chain_id = tama_chain.index-generation.id
 
   type = "reactive"

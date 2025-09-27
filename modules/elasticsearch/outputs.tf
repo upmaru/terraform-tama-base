@@ -16,6 +16,11 @@ output "specification_id" {
 }
 
 output "index_generation_class_id" {
-  value       = tama_class.index-generation.id
+  value       = module.index-generation-forwardable.class.id
   description = "The class id of index generation class"
+}
+
+output "index_generation_thought_id" {
+  value       = tama_modular_thought.generate-index-mapping.id
+  description = "The thought id of index generation thought"
 }

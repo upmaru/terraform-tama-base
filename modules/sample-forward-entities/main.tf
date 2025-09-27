@@ -55,9 +55,10 @@ resource "tama_thought_path" "forward-to-index-generation" {
   target_class_id = var.forward_to_class_id
 }
 
-resource "tama_thought_context" "context-to-forward" {
-  thought_id = tama_modular_thought.forward.id
-  prompt_id  = var.prompt_id
+resource "tama_thought_path_directive" "this" {
+  thought_path_id   = tama_thought_path.forward-to-index-generation.id
+  prompt_id         = var.prompt_id
+  target_thought_id = var.forward_to_thought_id
 }
 
 resource "tama_node" "this" {
