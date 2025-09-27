@@ -7,12 +7,11 @@ module "global" {
   source = "../../"
 }
 
-
 variable "xai_api_key" {}
 module "xai" {
   source = "../../modules/inference-service"
 
-  depends_on = [module.global]
+  depends_on = [module.global.schemas]
 
   space_id = module.global.space.id
   api_key  = var.xai_api_key
@@ -46,11 +45,16 @@ module "xai" {
 module "elasticsearch" {
   source = "../../modules/elasticsearch"
 
-  depends_on = [module.global]
+  depends_on = [module.global.schemas]
 
-  name                              = "elasticsearch"
-  schema_version                    = "1.0.0"
-  endpoint                          = "https://elasticsearch.arrakis.upmaru.network"
+  name           = "elasticsearch"
+  schema_version = "1.0.0"
+  endpoint       = "https://elasticsearch.arrakis.upmaru.network"
+
   api_key                           = var.elasticsearch_api_key
   index_mapping_generation_model_id = module.xai.model_ids.grok-3-mini
+
+  index_mapping_generation_model_parameters = jsonencode({
+    reasoning_effort = "high"
+  })
 }
