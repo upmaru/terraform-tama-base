@@ -34,5 +34,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_class_id"></a> [class\_id](#output\_class\_id) | The id of the class. |
+| <a name="output_class"></a> [class](#output\_class) | The class object. |
 <!-- END_TF_DOCS -->

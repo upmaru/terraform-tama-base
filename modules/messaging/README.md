@@ -14,14 +14,15 @@
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_response"></a> [response](#module\_response) | ../../modules/forwardable-class | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [tama_class.actor](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
-| [tama_class.response](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.thread](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class.user-message](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class_corpus.user-message-corpus](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |

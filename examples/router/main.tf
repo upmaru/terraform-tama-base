@@ -11,8 +11,7 @@ module "memovee" {
   source     = "../../modules/messaging"
   depends_on = [module.global]
 
-  name                    = "memovee"
-  entity_network_class_id = module.global.schemas["entity-network"].id
+  name = "memovee"
 }
 
 variable "openai_api_key" {}
@@ -41,8 +40,7 @@ module "openai" {
 module "router" {
   source = "../../modules/router"
 
-  root_messaging_space_id    = module.memovee.space.id
-  network_message_thought_id = module.memovee.network_message_thought_id
+  root_messaging_space_id = module.memovee.space_id
 
   message_routing_class_id = module.global.schemas["message-routing"].id
 

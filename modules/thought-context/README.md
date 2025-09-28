@@ -27,7 +27,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_contexts"></a> [contexts](#input\_contexts) | The contexts of the thought | <pre>map(object({<br/>    prompt_id = string<br/>    layer     = optional(number)<br/>    inputs = optional(list(object({<br/>      type            = string<br/>      class_corpus_id = string<br/>    })), [])<br/>  }))</pre> | n/a | yes |
+| <a name="input_contexts"></a> [contexts](#input\_contexts) | The contexts of the thought | <pre>map(object({<br>    prompt_id = string<br>    layer     = optional(number)<br>    inputs = optional(list(object({<br>      type            = string<br>      class_corpus_id = string<br>    })), [])<br>  }))</pre> | n/a | yes |
 | <a name="input_thought_id"></a> [thought\_id](#input\_thought\_id) | The ID of the thought to which the contexts | `string` | n/a | yes |
 
 ## Outputs
