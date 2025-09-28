@@ -14,7 +14,9 @@
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_index-generation-forwardable"></a> [index-generation-forwardable](#module\_index-generation-forwardable) | ../../modules/forwardable-class | n/a |
 
 ## Resources
 
@@ -22,7 +24,6 @@ No modules.
 |------|------|
 | [tama_chain.index-generation](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/chain) | resource |
 | [tama_class.elasticsearch-mapping](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
-| [tama_class.index-generation](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class) | resource |
 | [tama_class_corpus.create-index-request](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_class_corpus.elasticsearch-mapping](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
 | [tama_class_corpus.remove-index-alias-request](https://registry.terraform.io/providers/upmaru/tama/latest/docs/resources/class_corpus) | resource |
@@ -64,13 +65,14 @@ No modules.
 | <a name="input_index_mapping_generation_model_temperature"></a> [index\_mapping\_generation\_model\_temperature](#input\_index\_mapping\_generation\_model\_temperature) | The temperature to use for index generation mapping | `number` | `0` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Elasticsearch space | `string` | `"elasticsearch"` | no |
 | <a name="input_schema_version"></a> [schema\_version](#input\_schema\_version) | Schema version for the model | `string` | n/a | yes |
-| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br/>    path   = string,<br/>    method = string,<br/>    codes  = list(number)<br/>  })</pre> | <pre>{<br/>  "codes": [<br/>    200<br/>  ],<br/>  "method": "GET",<br/>  "path": "/_cluster/health"<br/>}</pre> | no |
+| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br>    path   = string,<br>    method = string,<br>    codes  = list(number)<br>  })</pre> | <pre>{<br>  "codes": [<br>    200<br>  ],<br>  "method": "GET",<br>  "path": "/_cluster/health"<br>}</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_index_generation_class_id"></a> [index\_generation\_class\_id](#output\_index\_generation\_class\_id) | The class id of index generation class |
+| <a name="output_index_generation_thought_id"></a> [index\_generation\_thought\_id](#output\_index\_generation\_thought\_id) | The thought id of index generation thought |
 | <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | The query schema for elasticsearch. |
 | <a name="output_space_id"></a> [space\_id](#output\_space\_id) | The space id of elasticsearch space |
 | <a name="output_specification_id"></a> [specification\_id](#output\_specification\_id) | The specification id of elasticsearch specification |
