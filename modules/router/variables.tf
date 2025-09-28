@@ -6,21 +6,25 @@ variable "root_messaging_space_id" {
 variable "author_class_name" {
   description = "The name of the author class"
   type        = string
+  default     = "actor"
 }
 
 variable "thread_class_name" {
   description = "The name of the thread class"
   type        = string
+  default     = "thread"
 }
 
 variable "message_class_name" {
   description = "The name of the message class"
   type        = string
+  default     = "user-message"
 }
 
 variable "focus_relations" {
   description = "The relations to focus on for the thread"
   type        = list(string)
+  default     = ["tooling", "reply"]
 }
 
 variable "message_routing_class_id" {
@@ -36,19 +40,7 @@ variable "prompt" {
 variable "look_back_limit" {
   description = "The number of messages to look back when routing"
   type        = number
-  default     = 5
-}
-
-variable "similarity_limit" {
-  description = "The similarity limit for the router"
-  type        = number
   default     = 10
-}
-
-variable "similarity_threshold" {
-  description = "The similarity threshold for the router"
-  type        = number
-  default     = 0.9
 }
 
 variable "classification_class_name" {

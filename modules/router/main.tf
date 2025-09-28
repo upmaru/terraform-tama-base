@@ -16,25 +16,18 @@ resource "tama_modular_thought" "this" {
   module {
     reference = "tama/agentic/router"
     parameters = jsonencode({
-      similarity = {
-        limit     = var.similarity_limit
-        threshold = var.similarity_threshold
-      }
-
-      classification = {
-        class_name = var.classification_class_name
-        properties = var.classification_properties
-        thread = {
-          limit = 10
-          classes = {
-            author  = var.author_class_name
-            thread  = var.thread_class_name
-            message = var.message_class_name
-          }
-          relations = {
-            routing = local.relation
-            focus   = var.focus_relations
-          }
+      class_name = var.classification_class_name
+      properties = var.classification_properties
+      thread = {
+        limit = var.look_back_limit
+        classes = {
+          author  = var.author_class_name
+          thread  = var.thread_class_name
+          message = var.message_class_name
+        }
+        relations = {
+          routing = local.relation
+          focus   = var.focus_relations
         }
       }
     })
