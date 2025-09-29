@@ -12,3 +12,12 @@ output "schemas" {
     response     = module.response.class
   }
 }
+
+output "thread_classes" {
+  description = "Classes that can be passed into thread parameters"
+  value = {
+    author  = tama_class.actor.name
+    thread  = tama_class.thread.name
+    message = tama_class.user-message.name
+  }
+}
