@@ -42,8 +42,12 @@ variable "tooling_parameters" {
   type = object({
     consecutive_limit = number
     thread = object({
-      limit   = number
-      classes = list(string)
+      limit = number
+      classes = object({
+        author  = string
+        thread  = string
+        message = string
+      })
       relations = object({
         routing = string
         focus   = list(string)
