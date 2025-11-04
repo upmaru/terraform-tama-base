@@ -6,7 +6,8 @@ resource "tama_modular_thought" "this" {
   output_class_id = data.tama_class.tool-call.id
 
   module {
-    reference = "tama/agentic/tooling"
+    reference  = "tama/agentic/tooling"
+    parameters = jsonencode(var.tooling_parameters)
   }
 }
 
