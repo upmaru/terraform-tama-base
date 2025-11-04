@@ -39,7 +39,7 @@ variable "action_ids" {
 
 variable "tooling_parameters" {
   description = "The parameters of the tool calling thought"
-  type = map(object({
+  type = object({
     consecutive_limit = number
     thread = object({
       limit   = number
@@ -49,8 +49,22 @@ variable "tooling_parameters" {
         focus   = list(string)
       })
     })
-  }))
-  default = {}
+  })
+  default = {
+    consecutive_limit = 5
+    thread = {
+      limit = 5
+      classes = {
+        author  = "actor",
+        thread  = "thread",
+        message = "user-message"
+      }
+      relations = {
+        routing = "routing"
+        focus   = ["tooling", "reply"]
+      }
+    }
+  }
 }
 
 variable "contexts" {
