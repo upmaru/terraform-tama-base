@@ -37,6 +37,22 @@ variable "action_ids" {
   type        = list(string)
 }
 
+variable "tooling_parameters" {
+  description = "The parameters of the tool calling thought"
+  type = map(object({
+    consecutive_limit = number
+    thread = object({
+      limit   = number
+      classes = list(string)
+      relations = object({
+        routing = string
+        focus   = list(string)
+      })
+    })
+  }))
+  default = {}
+}
+
 variable "contexts" {
   description = "The contexts of the tool-calling class"
   type = map(object({
