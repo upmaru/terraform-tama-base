@@ -15,6 +15,11 @@ components:
           items:
             type: string
           type: array
+        aggs:
+          description:
+            An object defining aggregations for querying analytics and
+            aggregate data. Optional.
+          type: object
         limit:
           description: Limit how many results to return. Optional. Defaults to 3.
           type: integer
