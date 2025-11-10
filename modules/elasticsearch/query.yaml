@@ -28,6 +28,11 @@ components:
             An object defining the search criteria (e.g., `terms`, `range`,
             `match`, or `bool` queries). Required.
           type: object
+        runtime_mappings:
+          description:
+            An object defining runtime field mappings that allow you to create
+            calculated fields at query time without modifying the index. Optional.
+          type: object
         sort:
           description:
             An array of objects specifying fields to sort by and their
