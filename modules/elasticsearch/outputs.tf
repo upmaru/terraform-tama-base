@@ -24,3 +24,8 @@ output "index_generation_thought_id" {
   value       = tama_modular_thought.generate-index-mapping.id
   description = "The thought id of index generation thought"
 }
+
+output "create_index_relation" {
+  value       = var.create_index_relation
+  description = "The relation used for index creation thought"
+}
