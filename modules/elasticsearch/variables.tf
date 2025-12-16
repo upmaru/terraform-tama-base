@@ -38,6 +38,11 @@ variable "validation" {
   }
 }
 
+variable "create_index_relation" {
+  default     = "create-index"
+  description = "The relation for create index relation"
+}
+
 variable "index_mapping_generation_model_id" {
   type        = string
   description = "The model id for index mapping generation"

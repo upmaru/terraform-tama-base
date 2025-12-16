@@ -110,7 +110,7 @@ resource "tama_thought_tool" "aliases-action" {
 resource "tama_modular_thought" "create-index" {
   chain_id        = tama_chain.index-generation.id
   index           = 2
-  relation        = "create-index"
+  relation        = var.create_index_relation
   output_class_id = data.tama_class.action-call.id
 
   module {
