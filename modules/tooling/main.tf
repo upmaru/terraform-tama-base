@@ -9,6 +9,14 @@ resource "tama_modular_thought" "this" {
     reference  = "tama/agentic/tooling"
     parameters = jsonencode(var.tooling_parameters)
   }
+
+  dynamic "faculty" {
+    for_each = var.faculty_queue_id == null ? [] : [1]
+    content {
+      queue_id = var.faculty_queue_id
+      priority = var.faculty_priority
+    }
+  }
 }
 
 resource "tama_thought_tool" "this" {
