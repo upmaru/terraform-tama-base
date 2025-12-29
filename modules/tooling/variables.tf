@@ -82,3 +82,15 @@ variable "contexts" {
     })), [])
   }))
 }
+
+variable "faculty_queue_id" {
+  type        = string
+  description = "The Queue ID to use for the thoughts"
+  default     = null
+}
+
+variable "faculty_priority" {
+  type        = number
+  description = "The priority for the thoughts"
+  default     = 1
+}
