@@ -8,6 +8,7 @@ resource "tama_source" "this" {
   endpoint = var.endpoint
   name     = var.name
   type     = "model"
+  request  = var.request
 }
 
 resource "tama_source_limit" "this" {

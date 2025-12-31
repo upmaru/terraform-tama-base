@@ -34,3 +34,19 @@ variable "models" {
 
   description = "List of models with their identifiers and paths"
 }
+
+variable "request" {
+  type = object({
+    headers = optional(list(object({
+      name  = string
+      value = string
+    })))
+    session_affinity = optional(object({
+      location = string
+      key      = string
+      value    = string
+    }))
+  })
+  description = "Optional request configuration overrides"
+  default     = null
+}
