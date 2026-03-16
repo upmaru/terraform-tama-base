@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.4 |
+| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.4 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.6 |
 
 ## Modules
 
@@ -34,12 +34,15 @@
 |------|-------------|------|---------|:--------:|
 | <a name="input_action_ids"></a> [action\_ids](#input\_action\_ids) | The IDs of the actions | `list(string)` | n/a | yes |
 | <a name="input_chain_id"></a> [chain\_id](#input\_chain\_id) | The ID of the chain | `string` | n/a | yes |
-| <a name="input_contexts"></a> [contexts](#input\_contexts) | The contexts of the tool-calling class | <pre>map(object({<br>    prompt_id = string<br>    layer     = optional(number)<br>    inputs = optional(list(object({<br>      type            = string<br>      class_corpus_id = string<br>    })), [])<br>  }))</pre> | n/a | yes |
+| <a name="input_contexts"></a> [contexts](#input\_contexts) | The contexts of the tool-calling class | <pre>map(object({<br/>    prompt_id = string<br/>    layer     = optional(number)<br/>    inputs = optional(list(object({<br/>      type            = string<br/>      class_corpus_id = string<br/>    })), [])<br/>  }))</pre> | n/a | yes |
+| <a name="input_faculty_priority"></a> [faculty\_priority](#input\_faculty\_priority) | The priority for the thoughts | `number` | `1` | no |
+| <a name="input_faculty_queue_id"></a> [faculty\_queue\_id](#input\_faculty\_queue\_id) | The Queue ID to use for the thoughts | `string` | `null` | no |
 | <a name="input_index"></a> [index](#input\_index) | The index of the tool-calling class | `number` | `0` | no |
 | <a name="input_relation"></a> [relation](#input\_relation) | The relation of the tool-calling class | `string` | `"tooling"` | no |
 | <a name="input_tool_call_model_id"></a> [tool\_call\_model\_id](#input\_tool\_call\_model\_id) | The ID of the tool-call model | `string` | n/a | yes |
 | <a name="input_tool_call_model_parameters"></a> [tool\_call\_model\_parameters](#input\_tool\_call\_model\_parameters) | The parameters of the tool-call model | `map(any)` | `{}` | no |
 | <a name="input_tool_call_model_temperature"></a> [tool\_call\_model\_temperature](#input\_tool\_call\_model\_temperature) | The temperature of the tool-call model | `number` | `0` | no |
+| <a name="input_tooling_parameters"></a> [tooling\_parameters](#input\_tooling\_parameters) | The parameters of the tool calling thought | <pre>object({<br/>    consecutive_limit = number<br/>    thread = object({<br/>      limit = number<br/>      classes = object({<br/>        author  = string<br/>        thread  = string<br/>        message = string<br/>      })<br/>      relations = object({<br/>        routing = string<br/>        focus   = list(string)<br/>      })<br/>    })<br/>  })</pre> | <pre>{<br/>  "consecutive_limit": 5,<br/>  "thread": {<br/>    "classes": {<br/>      "author": "actor",<br/>      "message": "user-message",<br/>      "thread": "thread"<br/>    },<br/>    "limit": 5,<br/>    "relations": {<br/>      "focus": [<br/>        "tooling",<br/>        "reply"<br/>      ],<br/>      "routing": "routing"<br/>    }<br/>  }<br/>}</pre> | no |
 
 ## Outputs
 

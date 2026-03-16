@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.2 |
+| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.2 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.6 |
 
 ## Modules
 
@@ -33,8 +33,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_author_class_name"></a> [author\_class\_name](#input\_author\_class\_name) | The name of the author class | `string` | `"actor"` | no |
 | <a name="input_classification_class_name"></a> [classification\_class\_name](#input\_classification\_class\_name) | The name of the classification class | `string` | `"class"` | no |
-| <a name="input_classification_properties"></a> [classification\_properties](#input\_classification\_properties) | The properties of the classification class | `list(string)` | <pre>[<br>  "class",<br>  "confidence",<br>  "referenced_tool_call_ids"<br>]</pre> | no |
-| <a name="input_focus_relations"></a> [focus\_relations](#input\_focus\_relations) | The relations to focus on for the thread | `list(string)` | <pre>[<br>  "tooling",<br>  "reply"<br>]</pre> | no |
+| <a name="input_classification_properties"></a> [classification\_properties](#input\_classification\_properties) | The properties of the classification class | `list(string)` | <pre>[<br/>  "class",<br/>  "confidence",<br/>  "referenced_tool_call_ids"<br/>]</pre> | no |
+| <a name="input_focus_relations"></a> [focus\_relations](#input\_focus\_relations) | The relations to focus on for the thread | `list(string)` | <pre>[<br/>  "tooling",<br/>  "reply"<br/>]</pre> | no |
 | <a name="input_look_back_limit"></a> [look\_back\_limit](#input\_look\_back\_limit) | The number of messages to look back when routing | `number` | `10` | no |
 | <a name="input_message_class_name"></a> [message\_class\_name](#input\_message\_class\_name) | The name of the message class | `string` | `"user-message"` | no |
 | <a name="input_message_routing_class_id"></a> [message\_routing\_class\_id](#input\_message\_routing\_class\_id) | The id of the message routing class | `string` | n/a | yes |
