@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.2 |
+| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.2 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.6 |
 
 ## Modules
 
@@ -39,7 +39,7 @@ No modules.
 | <a name="input_expected_class_names"></a> [expected\_class\_names](#input\_expected\_class\_names) | List of expected class names | `list` | `[]` | no |
 | <a name="input_space_id"></a> [space\_id](#input\_space\_id) | ID of the space | `string` | n/a | yes |
 | <a name="input_specification_id"></a> [specification\_id](#input\_specification\_id) | ID of the specification | `string` | n/a | yes |
-| <a name="input_types"></a> [types](#input\_types) | List of types to extract nested properties from can be array, object | `list` | <pre>[<br>  "array"<br>]</pre> | no |
+| <a name="input_types"></a> [types](#input\_types) | List of types to extract nested properties from can be array, object | `list` | <pre>[<br/>  "array"<br/>]</pre> | no |
 
 ## Outputs
 

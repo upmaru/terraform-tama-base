@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.2 |
+| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.2 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.6 |
 
 ## Modules
 
@@ -40,4 +40,5 @@
 |------|-------------|
 | <a name="output_schemas"></a> [schemas](#output\_schemas) | Scheams for the messaging space |
 | <a name="output_space_id"></a> [space\_id](#output\_space\_id) | The messaging space id |
+| <a name="output_thread_classes"></a> [thread\_classes](#output\_thread\_classes) | Classes that can be passed into thread parameters |
 <!-- END_TF_DOCS -->

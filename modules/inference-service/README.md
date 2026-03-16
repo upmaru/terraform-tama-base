@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.2 |
+| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.2 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.6 |
 
 ## Modules
 
@@ -30,8 +30,9 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_api_key"></a> [api\_key](#input\_api\_key) | API key for the model | `string` | n/a | yes |
 | <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | Endpoint for the model | `string` | n/a | yes |
-| <a name="input_models"></a> [models](#input\_models) | List of models with their identifiers and paths | <pre>list(object({<br>    identifier = string<br>    path       = string<br>    parameters = optional(string)<br>  }))</pre> | n/a | yes |
+| <a name="input_models"></a> [models](#input\_models) | List of models with their identifiers and paths | <pre>list(object({<br/>    identifier = string<br/>    path       = string<br/>    parameters = optional(string)<br/>  }))</pre> | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name for the model | `string` | n/a | yes |
+| <a name="input_request"></a> [request](#input\_request) | Optional request configuration overrides | <pre>object({<br/>    headers = optional(list(object({<br/>      name  = string<br/>      value = string<br/>    })))<br/>    session_affinity = optional(object({<br/>      location = string<br/>      key      = string<br/>      value    = string<br/>    }))<br/>  })</pre> | `null` | no |
 | <a name="input_requests_per_second"></a> [requests\_per\_second](#input\_requests\_per\_second) | Requests per second limit | `number` | `10` | no |
 | <a name="input_space_id"></a> [space\_id](#input\_space\_id) | Space ID for the model | `string` | n/a | yes |
 

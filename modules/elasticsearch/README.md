@@ -4,13 +4,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.2 |
+| <a name="requirement_tama"></a> [tama](#requirement\_tama) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.2 |
+| <a name="provider_tama"></a> [tama](#provider\_tama) | ~> 0.6 |
 
 ## Modules
 
@@ -58,6 +58,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_api_key"></a> [api\_key](#input\_api\_key) | The API key for authentication | `any` | n/a | yes |
+| <a name="input_create_index_relation"></a> [create\_index\_relation](#input\_create\_index\_relation) | The relation for create index relation | `string` | `"create-index"` | no |
 | <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | The endpoint of the Elasticsearch server | `any` | n/a | yes |
 | <a name="input_identity_identifier"></a> [identity\_identifier](#input\_identity\_identifier) | The identifier for the identity | `string` | `"ApiKey"` | no |
 | <a name="input_index_mapping_generation_model_id"></a> [index\_mapping\_generation\_model\_id](#input\_index\_mapping\_generation\_model\_id) | The model id for index mapping generation | `string` | n/a | yes |
@@ -65,12 +66,13 @@
 | <a name="input_index_mapping_generation_model_temperature"></a> [index\_mapping\_generation\_model\_temperature](#input\_index\_mapping\_generation\_model\_temperature) | The temperature to use for index generation mapping | `number` | `0` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Elasticsearch space | `string` | `"elasticsearch"` | no |
 | <a name="input_schema_version"></a> [schema\_version](#input\_schema\_version) | Schema version for the model | `string` | n/a | yes |
-| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br>    path   = string,<br>    method = string,<br>    codes  = list(number)<br>  })</pre> | <pre>{<br>  "codes": [<br>    200<br>  ],<br>  "method": "GET",<br>  "path": "/_cluster/health"<br>}</pre> | no |
+| <a name="input_validation"></a> [validation](#input\_validation) | Used to verify that the API key is valid | <pre>object({<br/>    path   = string,<br/>    method = string,<br/>    codes  = list(number)<br/>  })</pre> | <pre>{<br/>  "codes": [<br/>    200<br/>  ],<br/>  "method": "GET",<br/>  "path": "/_cluster/health"<br/>}</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| <a name="output_create_index_relation"></a> [create\_index\_relation](#output\_create\_index\_relation) | The relation used for index creation thought |
 | <a name="output_index_generation_class_id"></a> [index\_generation\_class\_id](#output\_index\_generation\_class\_id) | The class id of index generation class |
 | <a name="output_index_generation_thought_id"></a> [index\_generation\_thought\_id](#output\_index\_generation\_thought\_id) | The thought id of index generation thought |
 | <a name="output_query_schema"></a> [query\_schema](#output\_query\_schema) | The query schema for elasticsearch. |
