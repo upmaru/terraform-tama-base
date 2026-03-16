@@ -1,0 +1,184 @@
+---
+components:
+  schemas:
+    ContentOptions:
+      additionalProperties: true
+      properties:
+        maxCharacters:
+          description: Maximum number of characters to return for the content mode.
+          type: integer
+      type: object
+    SearchRequest:
+      additionalProperties: true
+      description: Request payload for Exa's Search API.
+      properties:
+        category:
+          description:
+            Category filter such as company, people, research paper, news,
+            tweet, personal site, or financial report.
+          type: string
+        contents:
+          additionalProperties: true
+          description:
+            Controls which content variants to return. Highlights are the
+            recommended default for tool workflows.
+          properties:
+            highlights:
+              oneOf:
+                - type: boolean
+                - "$ref": "#/components/schemas/ContentOptions"
+            summary:
+              oneOf:
+                - type: boolean
+                - "$ref": "#/components/schemas/ContentOptions"
+            text:
+              oneOf:
+                - type: boolean
+                - "$ref": "#/components/schemas/ContentOptions"
+          type: object
+        endCrawlDate:
+          description: Limit results to pages crawled before this timestamp or date.
+          type: string
+        endPublishedDate:
+          description: Limit results to pages published before this timestamp or date.
+          type: string
+        excludeDomains:
+          description: Domains to exclude from the search.
+          items:
+            type: string
+          type: array
+        includeDomains:
+          description: Domains to include in the search.
+          items:
+            type: string
+          type: array
+        maxAgeHours:
+          description:
+            Maximum age of indexed content in hours. Use 0 to always livecrawl
+            and -1 to use cache only.
+          type: integer
+        numResults:
+          description: Number of results to return. Exa supports 1 through 100.
+          maximum: 100
+          minimum: 1
+          type: integer
+        outputSchema:
+          additionalProperties: true
+          description:
+            Deep-search output schema. Use for deep or deep-reasoning requests
+            when you want structured output.
+          type: object
+        query:
+          description: Natural language search query.
+          type: string
+        startCrawlDate:
+          description: Limit results to pages crawled after this timestamp or date.
+          type: string
+        startPublishedDate:
+          description: Limit results to pages published after this timestamp or date.
+          type: string
+        systemPrompt:
+          description:
+            Deep-search instructions that guide how Exa searches and synthesizes
+            the final answer.
+          type: string
+        type:
+          description:
+            Search strategy. Common values are auto, fast, instant, deep, and
+            deep-reasoning.
+          type: string
+      required:
+        - query
+      type: object
+    SearchResponse:
+      additionalProperties: true
+      properties:
+        autopromptString:
+          description: Exa-generated reformulation of the query when applicable.
+          type: string
+        costDollars:
+          description: Request cost reported by Exa when available.
+          type: number
+        output:
+          additionalProperties: true
+          description: Structured output returned for deep-search variants.
+          type: object
+        requestId:
+          description: Unique identifier for the Exa request.
+          type: string
+        resolvedSearchType:
+          description: The search type Exa ultimately used.
+          type: string
+        results:
+          description: Search results returned by Exa.
+          items:
+            additionalProperties: true
+            properties:
+              author:
+                type: string
+              highlights:
+                items:
+                  type: string
+                type: array
+              id:
+                type: string
+              publishedDate:
+                type: string
+              score:
+                type: number
+              summary:
+                type: string
+              text:
+                type: string
+              title:
+                type: string
+              url:
+                type: string
+            type: object
+          type: array
+      type: object
+  securitySchemes:
+    ApiKey:
+      in: header
+      name: x-api-key
+      scheme: ApiKey
+      type: apiKey
+info:
+  description: Exa Search API specification for Tama tooling.
+  title: Exa Search API
+  version: 1.0.0
+openapi: 3.1.0
+paths:
+  "/search":
+    post:
+      description:
+        Search webpages and optionally return highlights, summaries, full text,
+        or deep-search output.
+      operationId: search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/SearchRequest"
+        description: Search request payload.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SearchResponse"
+          description: Successful Exa search response.
+        default:
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+          description: Error response from Exa.
+      summary: Search the web with Exa
+security:
+  - ApiKey: []
+servers:
+  - description: Exa API
+    url: "${endpoint}"
