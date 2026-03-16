@@ -154,7 +154,7 @@ paths:
       description:
         Search webpages and optionally return highlights, summaries, full text,
         or deep-search output.
-      operationId: search
+      operationId: exa-search
       requestBody:
         content:
           application/json:
