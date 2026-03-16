@@ -15,6 +15,7 @@ module "exa" {
 
 ## Output
 
+- `space_id`: The Exa component space ID.
 - `specification_id`: The Exa specification ID to pass into downstream modules.
 
 <!-- BEGIN_TF_DOCS -->
@@ -58,5 +59,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_space_id"></a> [space\_id](#output\_space\_id) | The space id of the Exa space |
 | <a name="output_specification_id"></a> [specification\_id](#output\_specification\_id) | The specification id of the Exa specification |
 <!-- END_TF_DOCS -->
