@@ -38,8 +38,8 @@ variable "validation" {
   })
 
   default = {
-    path   = "/search"
-    method = "POST"
-    codes  = [400, 422]
+    path   = "/research/v1"
+    method = "GET"
+    codes  = [200]
   }
 }

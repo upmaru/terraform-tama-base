@@ -53,7 +53,7 @@ No modules.
 | <a name="input_identity_identifier"></a> [identity\_identifier](#input\_identity\_identifier) | The security scheme identifier used by the specification | `string` | `"ApiKey"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Exa space | `string` | `"exa"` | no |
 | <a name="input_schema_version"></a> [schema\_version](#input\_schema\_version) | Schema version for the Exa specification | `string` | `"1.0.0"` | no |
-| <a name="input_validation"></a> [validation](#input\_validation) | Validation request used to verify that the API key is accepted by Exa | <pre>object({<br/>    path   = string,<br/>    method = string,<br/>    codes  = list(number)<br/>  })</pre> | <pre>{<br/>  "codes": [<br/>    400,<br/>    422<br/>  ],<br/>  "method": "POST",<br/>  "path": "/search"<br/>}</pre> | no |
+| <a name="input_validation"></a> [validation](#input\_validation) | Validation request used to verify that the API key is accepted by Exa | <pre>object({<br/>    path   = string,<br/>    method = string,<br/>    codes  = list(number)<br/>  })</pre> | <pre>{<br/>  "codes": [<br/>    200<br/>  ],<br/>  "method": "GET",<br/>  "path": "/research/v1"<br/>}</pre> | no |
 
 ## Outputs
 
